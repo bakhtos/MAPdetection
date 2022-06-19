@@ -101,6 +101,9 @@ def draw_graph(G, curved_arrows=True):
         nx.draw_networkx_edges(G, ax=user_figures[user][1], arrowsize=15,
                                arrowstyle='-|>', pos=pos, label=user,
                                edge_color=color, edgelist = [(i,j)])
+        nx.draw_networkx_edge_labels(G, pos=pos, ax=user_figures[user][1],
+                                    font_size=8, alpha=0.5,
+                                    edge_labels = {(i,j):G[i][j][user]['weight']})
         link_counter[(i,j)] += 1
         
     plt.show()
@@ -123,4 +126,4 @@ if __name__ == '__main__':
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
 
-    draw_graph(G, False)
+    draw_graph(G)
