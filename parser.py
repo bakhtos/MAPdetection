@@ -43,22 +43,22 @@ def parse_logs(directory, filename, counters):
 
 def draw_graph(G):
 
-    plt.figure()
+    fig_all = plt.figure()
+    ax_all = fig_all.add_subplot(111)
+    ax_all.set_title('All users')
     pos = nx.circular_layout(G)
     pos = nx.rescale_layout_dict(pos)
     colors = iter(["blue", "green", "red", "orange", "black"])
-    #print(pos)
     pos_labels = {k: (p[0]*1.10, p[1]*1.10) for k, p in pos.items()}
-    #pos = {k: (p[0]-0.02, p[1]-0.02) for k, p in pos.items()}
-    nx.draw_networkx_nodes(G, pos=pos, node_size=100)
-    nx.draw_networkx_labels(G, pos=pos_labels, verticalalignment='bottom')
+    nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=100)
+    nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels)#, verticalalignment='bottom')
     user_colors = dict()
     for i, j, user in G.edges(keys=True):
         p1 = pos[i]
         p2 = pos[j]
         diff = p2-p1
         diff = (diff[1], -diff[0])
-        print(diff)
+        #print(diff)
         new_pos = dict()
         delta = 0.01
         new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
@@ -68,7 +68,7 @@ def draw_graph(G):
         else:
             color = next(colors)
             user_colors[user] = color
-        nx.draw_networkx_edges(G, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
+        nx.draw_networkx_edges(G, ax=ax_all, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
 
         
     '''
