@@ -59,10 +59,17 @@ def draw_graph(G):
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=50, node_color='black')
     nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
     user_colors = dict()
+    user_figures = dict()
     link_counter = Counter()
 
     for user in INTERVALS.keys():
-        user_colors[user] = next(colors)    
+        user_colors[user] = next(COLORS)    
+        fig_u, ax_u = plt.subplots(figsize=(12,12))
+        ax_u.set_title(user, fontsize=20)
+        user_figures[user] = (fig_u, ax_u)
+        nx.draw_networkx_nodes(G, ax=ax_u, pos=pos, node_size=50, node_color='black')
+        nx.draw_networkx_labels(G, ax=ax_u, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
+        ax_u.axis('off')
 
     for i, j, user in G.edges(keys=True):
         p1 = pos[i]
@@ -76,6 +83,7 @@ def draw_graph(G):
         new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
         color = user_colors[user]
         nx.draw_networkx_edges(G, ax=ax_all, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
+        nx.draw_networkx_edges(G, ax=user_figures[user][1], pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
         link_counter[(i,j)] += 1
 
         
