@@ -10,6 +10,7 @@ from random import uniform
 
 TIME_DELTA = timedelta(hours=-8)
 DELTAS = [0.00, 0.01, -0.01, 0.02, -0.02]
+COLORS = iter(["blue", "green", "red", "orange", "black"])
 INTERVALS = {
     "UserNoLogin": ("2022-06-13 11:58:06.590", "2022-06-13 12:08:06.016"),
     "UserBooking": ("2022-06-13 12:36:47.820", "2022-06-13 12:46:47.202"),
@@ -45,13 +46,10 @@ def parse_logs(directory, filename, counters):
 def draw_graph(G):
 
     fig_all, ax_all = plt.subplots(figsize=(12,12))
-    #ax_all = fig_all.add_subplot(111)
     ax_all.set_title('All users', fontsize=20)
     pos = nx.circular_layout(G)
     pos = nx.rescale_layout_dict(pos)
-    colors = iter(["blue", "green", "red", "orange", "black"])
     pos_labels = dict()
-    #pos_labels = {k: (p[0]*1.10, p[1]*1.10) for k, p in pos.items()}
     for k, p in pos.items():
         pos_labels[k] = pos[k] + (0.25, 0.0) if pos[k][0] > 0.0 else pos[k] + (-0.25, 0.0)
     pos_labels['ts-inside-payment-service'] += (-0.06, 0.00)
