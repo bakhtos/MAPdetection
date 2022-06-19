@@ -44,15 +44,15 @@ def parse_logs(directory, filename, counters):
 
 def draw_graph(G):
 
-    fig_all = plt.figure()
-    ax_all = fig_all.add_subplot(111)
-    ax_all.set_title('All users')
+    fig_all, ax_all = plt.subplots(figsize=(12,12))
+    #ax_all = fig_all.add_subplot(111)
+    ax_all.set_title('All users', fontsize=20)
     pos = nx.circular_layout(G)
     pos = nx.rescale_layout_dict(pos)
     colors = iter(["blue", "green", "red", "orange", "black"])
     pos_labels = {k: (p[0]*1.10, p[1]*1.10) for k, p in pos.items()}
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=100)
-    nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels)#, verticalalignment='bottom')
+    nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
     user_colors = dict()
     link_counter = Counter()
 
@@ -79,6 +79,7 @@ def draw_graph(G):
         pos = {k: (p[0]*1.01, p[1]*1.01) for k, p in pos.items()}
         nx.draw_networkx_edges(G, pos=pos, label=user, edge_color=next(colors), edgelist = [(i,j) for i,j,k in G.edges(keys=True) if k  == user])
     '''
+    ax_all.axis('off')
     plt.show()
 
 
