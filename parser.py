@@ -53,21 +53,20 @@ def draw_graph(G):
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=100)
     nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels)#, verticalalignment='bottom')
     user_colors = dict()
+
+    for user in INTERVALS.keys():
+        user_colors[user] = next(colors)    
+
     for i, j, user in G.edges(keys=True):
         p1 = pos[i]
         p2 = pos[j]
         diff = p2-p1
         diff = (diff[1], -diff[0])
-        #print(diff)
         new_pos = dict()
         delta = 0.01
         new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
         new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
-        if user in user_colors:
-            color = user_colors[user]
-        else:
-            color = next(colors)
-            user_colors[user] = color
+        color = user_colors[user]
         nx.draw_networkx_edges(G, ax=ax_all, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
 
         
