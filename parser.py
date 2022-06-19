@@ -8,7 +8,8 @@ from collections import Counter
 from datetime import datetime, timedelta
 from random import uniform
 
-DELTA = timedelta(hours=-8)
+TIME_DELTA = timedelta(hours=-8)
+DELTAS = [0.00, 0.01, -0.01, 0.02, -0.02]
 INTERVALS = {
     "UserNoLogin": ("2022-06-13 11:58:06.590", "2022-06-13 12:08:06.016"),
     "UserBooking": ("2022-06-13 12:36:47.820", "2022-06-13 12:46:47.202"),
@@ -53,6 +54,7 @@ def draw_graph(G):
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=100)
     nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels)#, verticalalignment='bottom')
     user_colors = dict()
+    link_counter = Counter()
 
     for user in INTERVALS.keys():
         user_colors[user] = next(colors)    
@@ -61,13 +63,15 @@ def draw_graph(G):
         p1 = pos[i]
         p2 = pos[j]
         diff = p2-p1
-        diff = (diff[1], -diff[0])
+        l = np.linalg.norm(diff)
+        diff = (diff[1]/l, -diff[0]/l)
         new_pos = dict()
-        delta = 0.01
+        delta = DELTAS[link_counter[(i,j)]]
         new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
         new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
         color = user_colors[user]
         nx.draw_networkx_edges(G, ax=ax_all, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
+        link_counter[(i,j)] += 1
 
         
     '''
@@ -82,7 +86,8 @@ if __name__ == '__main__':
 
     counters = dict()
     for k, i in INTERVALS.items():
-        INTERVALS[k] = (datetime.fromisoformat(i[0])+DELTA, datetime.fromisoformat(i[1])+DELTA)
+        INTERVALS[k] = (datetime.fromisoformat(i[0])+TIME_DELTA,
+                        datetime.fromisoformat(i[1])+TIME_DELTA)
         counters[k] = Counter()
     directory = "kubernetes-istio-sleuth-v0.2.1-separate-load/tracing-log"
     G = nx.MultiDiGraph()
