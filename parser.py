@@ -50,8 +50,15 @@ def draw_graph(G):
     pos = nx.circular_layout(G)
     pos = nx.rescale_layout_dict(pos)
     colors = iter(["blue", "green", "red", "orange", "black"])
-    pos_labels = {k: (p[0]*1.10, p[1]*1.10) for k, p in pos.items()}
-    nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=100)
+    pos_labels = dict()
+    #pos_labels = {k: (p[0]*1.10, p[1]*1.10) for k, p in pos.items()}
+    for k, p in pos.items():
+        pos_labels[k] = pos[k] + (0.25, 0.0) if pos[k][0] > 0.0 else pos[k] + (-0.25, 0.0)
+    pos_labels['ts-inside-payment-service'] += (-0.06, 0.00)
+    pos_labels['ts-consign-price-service'] += (+0.04, 0.00)
+    pos_labels['ts-basic-service'] = pos['ts-basic-service'] + (0.0, 0.05)
+    pos_labels['ts-contacts-service'] = pos['ts-contacts-service'] + (0.0, -0.05)
+    nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=50, node_color='black')
     nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
     user_colors = dict()
     link_counter = Counter()
