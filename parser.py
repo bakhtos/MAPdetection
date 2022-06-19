@@ -43,7 +43,7 @@ def parse_logs(directory, filename, counters):
                 to_service = to_service[3].split('.')[0]
                 counters[user][(from_service, to_service)] += 1
 
-def draw_graph(G):
+def draw_graph(G, curved_arrows=True):
 
     fig_all, ax_all = plt.subplots(figsize=(12,12))
     ax_all.set_title('All users', fontsize=20)
@@ -79,11 +79,18 @@ def draw_graph(G):
         diff = (diff[1]/l, -diff[0]/l)
         new_pos = dict()
         delta = DELTAS[link_counter[(i,j)]]
-        new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
-        new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
+        connectionstyle = 'arc3'
         color = user_colors[user]
-        nx.draw_networkx_edges(G, ax=ax_all, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
-        nx.draw_networkx_edges(G, ax=user_figures[user][1], pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
+        if curved_arrows:
+            connectionstyle += ',rad='+str(delta/(0.6*l))
+            new_pos[i] = p1
+            new_pos[j] = p2
+        else:
+            connectionstyle = 'arc3'
+            new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
+            new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
+        nx.draw_networkx_edges(G, ax=ax_all, arrowsize=10, arrowstyle='->', connectionstyle=connectionstyle, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
+        nx.draw_networkx_edges(G, ax=user_figures[user][1], arrowsize=15, arrowstyle='-|>', pos=pos, label=user, edge_color=color, edgelist = [(i,j)])
         link_counter[(i,j)] += 1
 
         
