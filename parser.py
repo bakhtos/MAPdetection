@@ -6,7 +6,6 @@ import os
 import json
 from collections import Counter
 from datetime import datetime, timedelta
-from random import uniform
 
 TIME_DELTA = timedelta(hours=-8)
 DELTAS = [0.00, 0.01, -0.01, 0.02, -0.02]
@@ -30,9 +29,6 @@ def parse_logs(directory, filename, counters):
             start_time = datetime.fromisoformat(start_time[:-1])
             user = None
             for k, i in INTERVALS.items():
-                #print(start_time)
-                #print(i[0])
-                #print(i[1])
                 if start_time > i[0] and start_time < i[1]:
                     user = k
                     break
@@ -45,10 +41,16 @@ def parse_logs(directory, filename, counters):
 
 def draw_graph(G, curved_arrows=True):
 
+    # Figure for all users
     fig_all, ax_all = plt.subplots(figsize=(12,12))
     ax_all.set_title('All users', fontsize=20)
+    ax_all.axis('off')
+
+    # General positions of nodes
     pos = nx.circular_layout(G)
     pos = nx.rescale_layout_dict(pos)
+
+    # Positions for labels to prevent overlapping
     pos_labels = dict()
     for k, p in pos.items():
         pos_labels[k] = pos[k] + (0.25, 0.0) if pos[k][0] > 0.0 else pos[k] + (-0.25, 0.0)
@@ -56,27 +58,31 @@ def draw_graph(G, curved_arrows=True):
     pos_labels['ts-consign-price-service'] += (+0.04, 0.00)
     pos_labels['ts-basic-service'] = pos['ts-basic-service'] + (0.0, 0.05)
     pos_labels['ts-contacts-service'] = pos['ts-contacts-service'] + (0.0, -0.05)
+
+    # Draw nodes figure for all users
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=50, node_color='black')
-    nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
+    nx.draw_networkx_labels(G, ax=ax_all, pos=pos_labels, clip_on=False)
+
+
+    # Assign colors and create figures for separate users
     user_colors = dict()
     user_figures = dict()
-    link_counter = Counter()
-
     for user in INTERVALS.keys():
         user_colors[user] = next(COLORS)    
         fig_u, ax_u = plt.subplots(figsize=(12,12))
         ax_u.set_title(user, fontsize=20)
         user_figures[user] = (fig_u, ax_u)
         nx.draw_networkx_nodes(G, ax=ax_u, pos=pos, node_size=50, node_color='black')
-        nx.draw_networkx_labels(G, ax=ax_u, pos=pos_labels, clip_on=False)#, verticalalignment='bottom')
+        nx.draw_networkx_labels(G, ax=ax_u, pos=pos_labels, clip_on=False)
         ax_u.axis('off')
 
+    # Iterate over edges add draw them to appropriate figures
+    link_counter = Counter()
     for i, j, user in G.edges(keys=True):
         p1 = pos[i]
         p2 = pos[j]
         diff = p2-p1
         l = np.linalg.norm(diff)
-        diff = (diff[1]/l, -diff[0]/l)
         new_pos = dict()
         delta = DELTAS[link_counter[(i,j)]]
         connectionstyle = 'arc3'
@@ -86,20 +92,17 @@ def draw_graph(G, curved_arrows=True):
             new_pos[i] = p1
             new_pos[j] = p2
         else:
-            connectionstyle = 'arc3'
-            new_pos[i] =  np.array((p1[0]+delta*diff[0], p1[1]+delta*diff[1]))
-            new_pos[j] =  np.array((p2[0]+delta*diff[0], p2[1]+delta*diff[1]))
-        nx.draw_networkx_edges(G, ax=ax_all, arrowsize=10, arrowstyle='->', connectionstyle=connectionstyle, pos=new_pos, label=user, edge_color=color, edgelist = [(i,j)])
-        nx.draw_networkx_edges(G, ax=user_figures[user][1], arrowsize=15, arrowstyle='-|>', pos=pos, label=user, edge_color=color, edgelist = [(i,j)])
+            diff = (diff[1]/l, -diff[0]/l)
+            new_pos[i] =  (p1[0]+delta*diff[0], p1[1]+delta*diff[1])
+            new_pos[j] =  (p2[0]+delta*diff[0], p2[1]+delta*diff[1])
+        nx.draw_networkx_edges(G, ax=ax_all, arrowsize=10, arrowstyle='->',
+                               connectionstyle=connectionstyle, pos=new_pos,
+                               label=user, edge_color=color, edgelist = [(i,j)])
+        nx.draw_networkx_edges(G, ax=user_figures[user][1], arrowsize=15,
+                               arrowstyle='-|>', pos=pos, label=user,
+                               edge_color=color, edgelist = [(i,j)])
         link_counter[(i,j)] += 1
-
         
-    '''
-    for user in INTERVALS.keys():
-        pos = {k: (p[0]*1.01, p[1]*1.01) for k, p in pos.items()}
-        nx.draw_networkx_edges(G, pos=pos, label=user, edge_color=next(colors), edgelist = [(i,j) for i,j,k in G.edges(keys=True) if k  == user])
-    '''
-    ax_all.axis('off')
     plt.show()
 
 
@@ -110,14 +113,14 @@ if __name__ == '__main__':
         INTERVALS[k] = (datetime.fromisoformat(i[0])+TIME_DELTA,
                         datetime.fromisoformat(i[1])+TIME_DELTA)
         counters[k] = Counter()
+
     directory = "kubernetes-istio-sleuth-v0.2.1-separate-load/tracing-log"
     G = nx.MultiDiGraph()
     for file in os.listdir(directory):
         if file.endswith(".log"):
             parse_logs(directory, file, counters)
-    #print(counters)
     for user, counter in counters.items():
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
-    #print(G.nodes)
-    draw_graph(G)
+
+    draw_graph(G, False)
