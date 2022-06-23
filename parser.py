@@ -19,7 +19,7 @@ INTERVALS = {
     "UserRefundVoucher": ("2022-06-13 13:15:16.538", "2022-06-13 13:25:15.964")
 }
 
-def parse_logs(directory, filename, counters):
+def parse_logs(directory, filename, counters, pipelines):
 
     from_service = filename.split('.')[0]
     f = open(os.path.join(directory, filename), 'r')
@@ -39,6 +39,7 @@ def parse_logs(directory, filename, counters):
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
                 counters[user][(from_service, to_service)] += 1
+                pipelines[user].append((start_time, from_service, to_service))
 
 def draw_graph(G, curved_arrows=True):
 
@@ -113,14 +114,19 @@ def draw_graph(G, curved_arrows=True):
 if __name__ == '__main__':
 
     counters = dict()
+    pipelines = dict()
     for k, i in INTERVALS.items():
         INTERVALS[k] = (datetime.fromisoformat(i[0])+TIME_DELTA,
                         datetime.fromisoformat(i[1])+TIME_DELTA)
         counters[k] = Counter()
+        pipelines[k] = []
 
     for file in os.listdir(DIRECTORY):
         if file.endswith(".log"):
-            parse_logs(DIRECTORY, file, counters)
+            parse_logs(DIRECTORY, file, counters, pipelines)
+
+    for l in pipelines.values():
+        l.sort(key = lambda x: x[0])
 
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
@@ -128,4 +134,4 @@ if __name__ == '__main__':
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
 
-    draw_graph(G)
+    # draw_graph(G)
