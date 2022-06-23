@@ -46,6 +46,7 @@ def write_pipelines(pipelines):
 
     for k, l in pipelines.items():
         file = open(k+"_pipeline.csv",'w')
+        file.write("ISO_TIME,FROM_SERVICE,TO_SERVICE\n")
         for t in l:
             file.write(",".join(t)+"\n")
         file.close()
