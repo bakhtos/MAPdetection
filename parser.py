@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 TIME_DELTA = timedelta(hours=-8)
 DELTAS = [0.00, 0.01, -0.01, 0.02, -0.02]
 COLORS = iter(["blue", "green", "red", "orange", "black"])
+DIRECTORY = "kubernetes-istio-sleuth-v0.2.1-separate-load/tracing-log"
 INTERVALS = {
     "UserNoLogin": ("2022-06-13 11:58:06.590", "2022-06-13 12:08:06.016"),
     "UserBooking": ("2022-06-13 12:36:47.820", "2022-06-13 12:46:47.202"),
@@ -117,11 +118,12 @@ if __name__ == '__main__':
                         datetime.fromisoformat(i[1])+TIME_DELTA)
         counters[k] = Counter()
 
-    directory = "kubernetes-istio-sleuth-v0.2.1-separate-load/tracing-log"
-    G = nx.MultiDiGraph()
-    for file in os.listdir(directory):
+    for file in os.listdir(DIRECTORY):
         if file.endswith(".log"):
-            parse_logs(directory, file, counters)
+            parse_logs(DIRECTORY, file, counters)
+
+    # Create networkx' multigraph, edges are identified by User
+    G = nx.MultiDiGraph()
     for user, counter in counters.items():
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
