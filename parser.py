@@ -39,7 +39,17 @@ def parse_logs(directory, filename, counters, pipelines):
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
                 counters[user][(from_service, to_service)] += 1
-                pipelines[user].append((start_time, from_service, to_service))
+                pipelines[user].append((start_time.isoformat(), from_service, to_service))
+
+
+def write_pipelines(pipelines):
+
+    for k, l in pipelines.items():
+        file = open(k+"_pipeline.csv",'w')
+        for t in l:
+            file.write(",".join(t)+"\n")
+        file.close()
+
 
 def draw_graph(G, curved_arrows=True):
 
@@ -127,6 +137,8 @@ if __name__ == '__main__':
 
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
+
+    write_pipelines(pipelines)
 
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
