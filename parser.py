@@ -159,14 +159,12 @@ def draw_graph(G, intervals, curved_arrows=True):
     plt.show()
 
 
-if __name__ == '__main__':
 
+def generate_call_graph(directory, time_delta):
     call_counters = dict()
     pipelines = dict()
-    dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
-    time_delta = timedelta(hours=-8)
-    user_boundaries, instance_boundaries = detectUsers(dire, time_delta)
-    tracing_dir = os.path.join(dire, 'tracing-log') 
+    user_boundaries, instance_boundaries = detectUsers(directory, time_delta)
+    tracing_dir = os.path.join(directory, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
             parse_logs(tracing_dir, file, user_boundaries, instance_boundaries, call_counters, pipelines)
@@ -174,11 +172,19 @@ if __name__ == '__main__':
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
 
-    write_pipelines(pipelines)
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
     for user, counter in call_counters.items():
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
 
-    draw_graph(G, intervals)
+    return G, pipelines
+
+if __name__ == '__main__':
+    
+    directory = "kubernetes-istio-sleuth-v0.2.1-separate-load"
+    time_delta = timedelta(hours=-8)
+    G, pipelines = generate_call_graph(directory, time_delta)
+    write_pipelines(pipelines)
+    #draw_graph(G, intervals)
+
