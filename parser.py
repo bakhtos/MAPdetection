@@ -33,7 +33,7 @@ def detectUsers(directory, time_delta = None):
     return boundaries, intervals
 
 
-def parse_logs(directory, filename, boundaries, intervals):
+def parse_logs(directory, filename, boundaries, intervals, counters, pipelines):
 
     from_service = filename.split('.')[0]
     f = open(os.path.join(directory, filename), 'r')
@@ -169,7 +169,7 @@ if __name__ == '__main__':
     tracing_dir = os.path.join(dire, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
-            parse_logs(tracing_dir, file, boundaries, intervals)
+            parse_logs(tracing_dir, file, boundaries, intervals, counters, pipelines)
 
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
