@@ -95,10 +95,6 @@ def draw_graph(G, intervals, curved_arrows=True):
     pos_labels = dict()
     for k, p in pos.items():
         pos_labels[k] = pos[k] + (0.25, 0.0) if pos[k][0] > 0.0 else pos[k] + (-0.25, 0.0)
-    pos_labels['ts-inside-payment-service'] += (-0.06, 0.00)
-    pos_labels['ts-consign-price-service'] += (+0.04, 0.00)
-    pos_labels['ts-basic-service'] = pos['ts-basic-service'] + (0.0, 0.05)
-    pos_labels['ts-contacts-service'] = pos['ts-contacts-service'] + (0.0, -0.05)
 
     # Draw nodes figure for all users
     nx.draw_networkx_nodes(G, ax=ax_all, pos=pos, node_size=50, node_color='black')
