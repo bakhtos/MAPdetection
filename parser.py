@@ -39,14 +39,23 @@ def parse_logs(directory, filename, counters, pipelines):
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
                 counters[user][(from_service, to_service)] += 1
-                pipelines[user].append((start_time.isoformat(), from_service, to_service))
+                endpoint = obj['path']
+                if endpoint is not None:
+                    endpoint = endpoint.split('/')
+                    if len(endpoint) >= 5:
+                        endpoint = endpoint[4]
+                    else:
+                        endpoint = endpoint[-1]
+                else:
+                    endpoint = ''
+                pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
 
 
 def write_pipelines(pipelines):
 
     for k, l in pipelines.items():
         file = open(k+"_pipeline.csv",'w')
-        file.write("ISO_TIME,FROM_SERVICE,TO_SERVICE\n")
+        file.write("ISO_TIME,FROM_SERVICE,TO_SERVICE,ENDPOINT\n")
         for t in l:
             file.write(",".join(t)+"\n")
         file.close()
