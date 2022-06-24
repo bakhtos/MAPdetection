@@ -38,7 +38,7 @@ def detectUsers(directory):
     return intervals
 
 
-def parse_logs(directory, filename, counters, pipelines):
+def parse_logs(directory, filename, intervals, counters, pipelines):
 
     from_service = filename.split('.')[0]
     f = open(os.path.join(directory, filename), 'r')
@@ -48,7 +48,7 @@ def parse_logs(directory, filename, counters, pipelines):
             start_time = obj["start_time"]
             start_time = datetime.fromisoformat(start_time[:-1])
             user = None
-            for k, i in INTERVALS.items():
+            for k, i in intervals.items():
                 if start_time > i[0] and start_time < i[1]:
                     user = k
                     break
@@ -80,7 +80,7 @@ def write_pipelines(pipelines):
         file.close()
 
 
-def draw_graph(G, curved_arrows=True):
+def draw_graph(G, intervals, curved_arrows=True):
 
     # Figure for all users
     fig_all, ax_all = plt.subplots(figsize=(12,12))
@@ -108,7 +108,7 @@ def draw_graph(G, curved_arrows=True):
     # Assign colors and create figures for separate users
     user_colors = dict()
     user_figures = dict()
-    for user in INTERVALS.keys():
+    for user in intervals.keys():
         user_colors[user] = next(COLORS)    
         fig_u, ax_u = plt.subplots(figsize=(12,12))
         ax_u.set_title(user, fontsize=20)
@@ -156,20 +156,21 @@ if __name__ == '__main__':
     pipelines = dict()
     dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
     intervals = detectUsers(dire)
-    for k, i in INTERVALS.items():
-        INTERVALS[k] = (datetime.fromisoformat(i[0])+TIME_DELTA,
-                        datetime.fromisoformat(i[1])+TIME_DELTA)
+    for k, i in intervals.items():
+        intervals[k] = (i[0]+TIME_DELTA,
+                        i[1]+TIME_DELTA)
         counters[k] = Counter()
         pipelines[k] = []
 
+    tracing_dir = os.path.join(dire, 'tracing-log') 
     for file in os.listdir(DIRECTORY):
         if file.endswith(".log"):
-            parse_logs(DIRECTORY, file, counters, pipelines)
+            parse_logs(tracing_dir, file, intervals, counters, pipelines)
 
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
 
-    #write_pipelines(pipelines)
+    write_pipelines(pipelines)
 
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
@@ -177,4 +178,4 @@ if __name__ == '__main__':
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
 
-    # draw_graph(G)
+    draw_graph(G, intervals)
