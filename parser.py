@@ -51,16 +51,19 @@ def parse_logs(directory, filename, boundaries, intervals):
             user_intervals = intervals[user]
             for i in range(len(user_intervals)):
                 if start_time < user_intervals[i]:
-                    user += "_"+str(i-1)
+                    user_instance = user +"_"+str(i-1)
                     break
             if user not in counters: counters[user] = Counter()
+            if user_instance not in counters: counters[user_instance] = Counter()
             if user not in pipelines: pipelines[user] = []
+            if user_instance not in pipelines: pipelines[user_instance] = []
 
             to_service = obj["upstream_cluster"]
             to_service = to_service.split('|')
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
                 counters[user][(from_service, to_service)] += 1
+                counters[user_instance][(from_service, to_service)] += 1
                 endpoint = obj['path']
                 if endpoint is not None:
                     endpoint = endpoint.split('/')
@@ -71,6 +74,7 @@ def parse_logs(directory, filename, boundaries, intervals):
                 else:
                     endpoint = ''
                 pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
+                pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
 
 
 def write_pipelines(pipelines):
@@ -171,7 +175,6 @@ if __name__ == '__main__':
         l.sort(key = lambda x: x[0])
 
     write_pipelines(pipelines)
-
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
     for user, counter in counters.items():
