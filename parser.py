@@ -17,23 +17,23 @@ def detectUsers(directory, time_delta = None):
 
     pptam_f = os.path.join(directory, "pptam")
     users = os.listdir(pptam_f)
-    intervals = dict()
-    boundaries = dict()
+    instance_boundaries = dict()
+    user_boundaries = dict()
     for user in users:
         l = []
         pptam_log = os.path.join(pptam_f, user, 'locustfile.log')
         with open(pptam_log, 'r') as file:
             lines = file.readlines()
-        boundaries[user] = (get_time(lines[0])+time_delta, get_time(lines[-1])+time_delta)
+        user_boundaries[user] = (get_time(lines[0])+time_delta, get_time(lines[-1])+time_delta)
         for line in lines:
             if "Running user" in line:
                 l.append(get_time(line) + time_delta)
-        intervals[user] = tuple(l)
+        instance_boundaries[user] = tuple(l)
 
-    return boundaries, intervals
+    return user_boundaries, instance_boundaries
 
 
-def parse_logs(directory, filename, boundaries, intervals, counters, pipelines):
+def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_counters, pipelines):
 
     from_service = filename.split('.')[0]
     f = open(os.path.join(directory, filename), 'r')
@@ -43,18 +43,18 @@ def parse_logs(directory, filename, boundaries, intervals, counters, pipelines):
             start_time = obj["start_time"]
             start_time = datetime.fromisoformat(start_time[:-1])
             user = None
-            for k, i in boundaries.items():
+            for k, i in user_boundaries.items():
                 if start_time > i[0] and start_time < i[1]:
                     user = k
                     break
             if user is None: continue
-            user_intervals = intervals[user]
+            user_intervals = instance_boundaries[user]
             for i in range(len(user_intervals)):
                 if start_time < user_intervals[i]:
                     user_instance = user +"_"+str(i-1)
                     break
-            if user not in counters: counters[user] = Counter()
-            if user_instance not in counters: counters[user_instance] = Counter()
+            if user not in call_counters: call_counters[user] = Counter()
+            if user_instance not in call_counters: call_counters[user_instance] = Counter()
             if user not in pipelines: pipelines[user] = []
             if user_instance not in pipelines: pipelines[user_instance] = []
 
@@ -62,8 +62,8 @@ def parse_logs(directory, filename, boundaries, intervals, counters, pipelines):
             to_service = to_service.split('|')
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
-                counters[user][(from_service, to_service)] += 1
-                counters[user_instance][(from_service, to_service)] += 1
+                call_counters[user][(from_service, to_service)] += 1
+                call_counters[user_instance][(from_service, to_service)] += 1
                 endpoint = obj['path']
                 if endpoint is not None:
                     endpoint = endpoint.split('/')
@@ -161,15 +161,15 @@ def draw_graph(G, intervals, curved_arrows=True):
 
 if __name__ == '__main__':
 
-    counters = dict()
+    call_counters = dict()
     pipelines = dict()
     dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
     time_delta = timedelta(hours=-8)
-    boundaries, intervals = detectUsers(dire, time_delta)
+    user_boundaries, instance_boundaries = detectUsers(dire, time_delta)
     tracing_dir = os.path.join(dire, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
-            parse_logs(tracing_dir, file, boundaries, intervals, counters, pipelines)
+            parse_logs(tracing_dir, file, user_boundaries, instance_boundaries, call_counters, pipelines)
 
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
@@ -177,7 +177,7 @@ if __name__ == '__main__':
     write_pipelines(pipelines)
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
-    for user, counter in counters.items():
+    for user, counter in call_counters.items():
         for keys, weight in counter.items():
             G.add_edge(keys[0], keys[1], key=user, weight=weight)
 
