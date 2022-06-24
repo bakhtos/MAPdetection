@@ -19,6 +19,25 @@ INTERVALS = {
     "UserRefundVoucher": ("2022-06-13 13:15:16.538", "2022-06-13 13:25:15.964")
 }
 
+def detectUsers(directory):
+
+    def get_time(line):
+        return datetime.fromisoformat('.'.join(line[1:24].split(',')))
+
+    pptam_f = os.path.join(directory, "pptam")
+    users = os.listdir(pptam_f)
+    intervals = dict()
+    for user in users:
+        pptam_log = os.path.join(pptam_f, user, 'locustfile.log')
+        with open(pptam_log, 'r') as f:
+            lines = f.readlines()
+            start_time = get_time(lines[0])
+            end_time = get_time(lines[-1])
+        intervals[user] = (start_time, end_time)
+
+    return intervals
+
+
 def parse_logs(directory, filename, counters, pipelines):
 
     from_service = filename.split('.')[0]
@@ -135,6 +154,8 @@ if __name__ == '__main__':
 
     counters = dict()
     pipelines = dict()
+    dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
+    intervals = detectUsers(dire)
     for k, i in INTERVALS.items():
         INTERVALS[k] = (datetime.fromisoformat(i[0])+TIME_DELTA,
                         datetime.fromisoformat(i[1])+TIME_DELTA)
@@ -148,7 +169,7 @@ if __name__ == '__main__':
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
 
-    write_pipelines(pipelines)
+    #write_pipelines(pipelines)
 
     # Create networkx' multigraph, edges are identified by User
     G = nx.MultiDiGraph()
