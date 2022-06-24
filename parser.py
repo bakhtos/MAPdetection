@@ -80,7 +80,9 @@ def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_c
 def write_pipelines(pipelines):
 
     for k, l in pipelines.items():
-        file = open(k+"_pipeline.csv",'w')
+        p = os.path.join("pipelines", k+"_pipeline.csv")
+        os.makedirs("pipelines", exist_ok=True)
+        file = open(p,'w')
         file.write("ISO_TIME,FROM_SERVICE,TO_SERVICE,ENDPOINT\n")
         for t in l:
             file.write(",".join(t)+"\n")
