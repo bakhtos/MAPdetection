@@ -8,7 +8,9 @@ from collections import Counter
 from datetime import datetime, timedelta
 
 
-def detectUsers(directory):
+def detectUsers(directory, time_delta = None):
+
+    if time_delta is None: time_delta = timedelta(0)
 
     def get_time(line):
         return datetime.fromisoformat('.'.join(line[1:24].split(',')))
@@ -16,18 +18,22 @@ def detectUsers(directory):
     pptam_f = os.path.join(directory, "pptam")
     users = os.listdir(pptam_f)
     intervals = dict()
+    boundaries = dict()
     for user in users:
+        l = []
         pptam_log = os.path.join(pptam_f, user, 'locustfile.log')
-        with open(pptam_log, 'r') as f:
-            lines = f.readlines()
-            start_time = get_time(lines[0])
-            end_time = get_time(lines[-1])
-        intervals[user] = (start_time, end_time)
+        with open(pptam_log, 'r') as file:
+            lines = file.readlines()
+        boundaries[user] = (get_time(lines[0])+time_delta, get_time(lines[-1])+time_delta)
+        for line in lines:
+            if "Running user" in line:
+                l.append(get_time(line) + time_delta)
+        intervals[user] = tuple(l)
 
-    return intervals
+    return boundaries, intervals
 
 
-def parse_logs(directory, filename, intervals, counters, pipelines):
+def parse_logs(directory, filename, boundaries, intervals):
 
     from_service = filename.split('.')[0]
     f = open(os.path.join(directory, filename), 'r')
@@ -37,11 +43,19 @@ def parse_logs(directory, filename, intervals, counters, pipelines):
             start_time = obj["start_time"]
             start_time = datetime.fromisoformat(start_time[:-1])
             user = None
-            for k, i in intervals.items():
+            for k, i in boundaries.items():
                 if start_time > i[0] and start_time < i[1]:
                     user = k
                     break
             if user is None: continue
+            user_intervals = intervals[user]
+            for i in range(len(user_intervals)):
+                if start_time < user_intervals[i]:
+                    user += "_"+str(i-1)
+                    break
+            if user not in counters: counters[user] = Counter()
+            if user not in pipelines: pipelines[user] = []
+
             to_service = obj["upstream_cluster"]
             to_service = to_service.split('|')
             if to_service[0] == 'outbound':
@@ -147,17 +161,11 @@ if __name__ == '__main__':
     pipelines = dict()
     dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
     time_delta = timedelta(hours=-8)
-    intervals = detectUsers(dire)
-    for k, i in intervals.items():
-        intervals[k] = (i[0]+time_delta,
-                        i[1]+time_delta)
-        counters[k] = Counter()
-        pipelines[k] = []
-
+    boundaries, intervals = detectUsers(dire, time_delta)
     tracing_dir = os.path.join(dire, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
-            parse_logs(tracing_dir, file, intervals, counters, pipelines)
+            parse_logs(tracing_dir, file, boundaries, intervals)
 
     for l in pipelines.values():
         l.sort(key = lambda x: x[0])
