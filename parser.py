@@ -7,17 +7,6 @@ import json
 from collections import Counter
 from datetime import datetime, timedelta
 
-TIME_DELTA = timedelta(hours=-8)
-DELTAS = [0.00, 0.01, -0.01, 0.02, -0.02]
-COLORS = iter(["blue", "green", "red", "orange", "black"])
-DIRECTORY = "kubernetes-istio-sleuth-v0.2.1-separate-load/tracing-log"
-INTERVALS = {
-    "UserNoLogin": ("2022-06-13 11:58:06.590", "2022-06-13 12:08:06.016"),
-    "UserBooking": ("2022-06-13 12:36:47.820", "2022-06-13 12:46:47.202"),
-    "UserConsignTicket": ("2022-06-13 12:47:33.280", "2022-06-13 12:57:30.370"),
-    "UserCancelNoRefund": ("2022-06-13 13:04:39.409", "2022-06-13 13:14:38.821"),
-    "UserRefundVoucher": ("2022-06-13 13:15:16.538", "2022-06-13 13:25:15.964")
-}
 
 def detectUsers(directory):
 
@@ -102,10 +91,11 @@ def draw_graph(G, intervals, curved_arrows=True):
 
 
     # Assign colors and create figures for separate users
+    colors = iter(['b','r','g','c','m','y'])
     user_colors = dict()
     user_figures = dict()
     for user in intervals.keys():
-        user_colors[user] = next(COLORS)    
+        user_colors[user] = next(colors)    
         fig_u, ax_u = plt.subplots(figsize=(12,12))
         ax_u.set_title(user, fontsize=20)
         user_figures[user] = (fig_u, ax_u)
@@ -115,13 +105,18 @@ def draw_graph(G, intervals, curved_arrows=True):
 
     # Iterate over edges add draw them to appropriate figures
     link_counter = Counter()
+    deltas = [0.0]
+    for i in range(1, (len(intervals)+1)//2):
+        deltas.append(i/100)
+        deltas.append(-i/100)
+
     for i, j, user in G.edges(keys=True):
         p1 = pos[i]
         p2 = pos[j]
         diff = p2-p1
         l = np.linalg.norm(diff)
         new_pos = dict()
-        delta = DELTAS[link_counter[(i,j)]]
+        delta = deltas[link_counter[(i,j)]]
         connectionstyle = 'arc3'
         color = user_colors[user]
         if curved_arrows:
@@ -151,15 +146,16 @@ if __name__ == '__main__':
     counters = dict()
     pipelines = dict()
     dire = "kubernetes-istio-sleuth-v0.2.1-separate-load"
+    time_delta = timedelta(hours=-8)
     intervals = detectUsers(dire)
     for k, i in intervals.items():
-        intervals[k] = (i[0]+TIME_DELTA,
-                        i[1]+TIME_DELTA)
+        intervals[k] = (i[0]+time_delta,
+                        i[1]+time_delta)
         counters[k] = Counter()
         pipelines[k] = []
 
     tracing_dir = os.path.join(dire, 'tracing-log') 
-    for file in os.listdir(DIRECTORY):
+    for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
             parse_logs(tracing_dir, file, intervals, counters, pipelines)
 
