@@ -48,6 +48,7 @@ def detect_users(directory, time_delta = None):
             if "Running user" in line:
                 l.append(get_time(line) + time_delta)
         instance_boundaries[user] = tuple(l)
+        print(f"{user}: {len(l)} instances detected")
 
     return user_boundaries, instance_boundaries
 
