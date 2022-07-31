@@ -54,29 +54,40 @@ def detect_users(directory, time_delta = None):
 
 def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_counters, pipelines):
 
+    # Each logfile is named after the service
     from_service = filename.split('.')[0]
+    # Read log line by line
     f = open(os.path.join(directory, filename), 'r')
     for line in f:
+        # Parse lines contaning json bodies
         if line[0] == '{':
             obj = json.loads(line)
+            # Get the time of the API call
             start_time = obj["start_time"]
             start_time = datetime.fromisoformat(start_time[:-1])
+
+            # Find user whose interval of activity captures start_time
             user = None
             for k, i in user_boundaries.items():
                 if start_time > i[0] and start_time < i[1]:
                     user = k
                     break
             if user is None: continue
+
+            # Find the particular user instances whose interval of activity captures start_time
             user_intervals = instance_boundaries[user]
             for i in range(len(user_intervals)):
                 if start_time < user_intervals[i]:
                     user_instance = user +"_"+str(i-1)
                     break
+
+            # Insert user [instance] in all necessary datastructures
             if user not in call_counters: call_counters[user] = Counter()
             if user_instance not in call_counters: call_counters[user_instance] = Counter()
             if user not in pipelines: pipelines[user] = []
             if user_instance not in pipelines: pipelines[user_instance] = []
 
+            # If calling another service, store the call and the pipeline
             to_service = obj["upstream_cluster"]
             to_service = to_service.split('|')
             if to_service[0] == 'outbound':
