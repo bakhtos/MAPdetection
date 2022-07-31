@@ -24,15 +24,14 @@ def detect_users(directory, time_delta = None):
         '''Convert locustlog timestamp string to datetime object.'''
         return datetime.fromisoformat('.'.join(line[1:24].split(',')))
 
-    pptam_f = os.path.join(directory, "pptam")
     # Each user is defined by a separate directory
-    users = os.listdir(pptam_f)
+    users = os.listdir(directory)
     instance_boundaries = dict()
     user_boundaries = dict()
 
     for user in users:
         # Read locustlog of a user
-        pptam_log = os.path.join(pptam_f, user, 'locustfile.log')
+        pptam_log = os.path.join(directory, user, 'locustfile.log')
         with open(pptam_log, 'r') as file:
             lines = file.readlines()
         # First and last timestamps in file define the interval when the user was active
