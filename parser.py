@@ -213,7 +213,7 @@ def generate_call_graph(pptam_dir, tracing_dir, time_delta):
     return user_graphs, pipelines
 
 
-def detect_request_bundle(pipelines):
+def detect_request_bundle(pipelines, threshold_service=2, threshold_endpoint=2):
 
     bundles_service = dict()
     bundles_endpoint = dict()
@@ -230,7 +230,7 @@ def detect_request_bundle(pipelines):
             if current_call_service == last_call_service:
                 count_service += 1
             else:
-                if count_service >= 2:
+                if count_service >= threshold_service:
                     bundles_service[user].append((*last_call_service, count_service))
                     print(f"{user}: Service-level request bundle detected between {last_call_service[0]} and {last_call_service[1]} with count {count_service}")
                 count_service = 1
@@ -239,7 +239,7 @@ def detect_request_bundle(pipelines):
             if current_call_endpoint == last_call_endpoint:
                 count_endpoint += 1
             else:
-                if count_endpoint >= 2:
+                if count_endpoint >= threshold_endpoint:
                     bundles_endpoint[user].append((*last_call_endpoint, count_endpoint))
                     print(f"{user}: Endpoint-level request bundle detected between {last_call_endpoint[0]} and {last_call_endpoint[1]}{last_call_endpoint[2]} with count {count_endpoint}")
                 count_endpoint = 1
