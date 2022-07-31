@@ -15,6 +15,12 @@ def detect_users(directory, time_delta = None):
     :param str directory: A directory which stores all users' configurations
     :param time_delta: Time difference to add to all parsed timestamps (default: 0)
     :type time_delta: datetime.timedelta
+
+    :return: user_boundaries - for each user tells the couple of timestamps
+             defining that user's begining and end of activity;
+             instance_boundaries - for each user tells the timestamps when a new instance
+             of that user begins activity.
+    :rtype: dict
     '''
 
     # Default time_delta is 0
