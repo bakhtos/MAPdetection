@@ -245,7 +245,7 @@ def detect_request_bundle(pipelines):
                 count_endpoint = 1
                 last_call_endpoint = current_call_endpoint
 
-        return bundles_service, bundles_endpoint
+    return bundles_service, bundles_endpoint
 
 if __name__ == '__main__':
     
