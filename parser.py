@@ -9,22 +9,36 @@ from datetime import datetime, timedelta
 
 
 def detect_users(directory, time_delta = None):
+    '''Detect all Users appearing in pptam logs.
+    Each user must have an own directory with locust configuration/log.
 
+    :param str directory: A directory which stores all users' configurations
+    :param time_delta: Time difference to add to all parsed timestamps (default: 0)
+    :type time_delta: datetime.timedelta
+    '''
+
+    # Default time_delta is 0
     if time_delta is None: time_delta = timedelta(0)
 
     def get_time(line):
+        '''Convert locustlog timestamp string to datetime object.'''
         return datetime.fromisoformat('.'.join(line[1:24].split(',')))
 
     pptam_f = os.path.join(directory, "pptam")
+    # Each user is defined by a separate directory
     users = os.listdir(pptam_f)
     instance_boundaries = dict()
     user_boundaries = dict()
+
     for user in users:
-        l = []
+        # Read locustlog of a user
         pptam_log = os.path.join(pptam_f, user, 'locustfile.log')
         with open(pptam_log, 'r') as file:
             lines = file.readlines()
+        # First and last timestamps in file define the interval when the user was active
         user_boundaries[user] = (get_time(lines[0])+time_delta, get_time(lines[-1])+time_delta)
+        # Each line with 'Running user' begins a new instance of the particular user
+        l = []
         for line in lines:
             if "Running user" in line:
                 l.append(get_time(line) + time_delta)
