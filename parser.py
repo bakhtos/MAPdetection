@@ -184,7 +184,8 @@ def draw_graph(G, intervals, curved_arrows=True):
 def generate_call_graph(directory, time_delta):
     call_counters = dict()
     pipelines = dict()
-    user_boundaries, instance_boundaries = detect_users(directory, time_delta)
+    pptam_dir = os.path.join(directory, 'pptam')
+    user_boundaries, instance_boundaries = detect_users(pptam_dir, time_delta)
     tracing_dir = os.path.join(directory, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
