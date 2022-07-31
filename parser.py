@@ -92,10 +92,11 @@ def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_c
             to_service = to_service.split('|')
             if to_service[0] == 'outbound':
                 to_service = to_service[3].split('.')[0]
-                call_counters[user][(from_service, to_service)] += 1
-                call_counters[user_instance][(from_service, to_service)] += 1
                 endpoint = obj['path']
                 if endpoint is None: endpoint = '/'
+
+                call_counters[user][(from_service, to_service, endpoint)] += 1
+                call_counters[user_instance][(from_service, to_service, endpoint)] += 1
                 pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
                 pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
 
