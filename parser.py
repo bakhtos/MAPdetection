@@ -200,12 +200,14 @@ def generate_call_graph(directory, time_delta):
         l.sort(key = lambda x: x[0])
 
     # Create networkx' multigraph, edges are identified by User
-    G = nx.MultiDiGraph()
+    user_graphs = dict()
     for user, counter in call_counters.items():
+        G = nx.MultiDiGraph()
+        user_graphs[user] = G
         for keys, weight in counter.items():
-            G.add_edge(keys[0], keys[1], key=user, weight=weight)
+            G.add_edge(keys[0], keys[1], key=keys[2], weight=weight)
 
-    return G, pipelines
+    return user_graphs, pipelines
 
 if __name__ == '__main__':
     
