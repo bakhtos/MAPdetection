@@ -186,12 +186,10 @@ def draw_graph(G, intervals, curved_arrows=True):
 
 
 
-def generate_call_graph(directory, time_delta):
+def generate_call_graph(pptam_dir, tracing_dir, time_delta):
     call_counters = dict()
     pipelines = dict()
-    pptam_dir = os.path.join(directory, 'pptam')
     user_boundaries, instance_boundaries = detect_users(pptam_dir, time_delta)
-    tracing_dir = os.path.join(directory, 'tracing-log') 
     for file in os.listdir(tracing_dir):
         if file.endswith(".log"):
             parse_logs(tracing_dir, file, user_boundaries, instance_boundaries, call_counters, pipelines)
@@ -212,8 +210,10 @@ def generate_call_graph(directory, time_delta):
 if __name__ == '__main__':
     
     directory = "kubernetes-istio-sleuth-v0.2.1-separate-load"
+    pptam_dir = os.path.join(directory, 'pptam')
+    tracing_dir = os.path.join(directory, 'tracing-log')
     time_delta = timedelta(hours=-8)
-    G, pipelines = generate_call_graph(directory, time_delta)
+    G, pipelines = generate_call_graph(pptam_dir, tracing_dir, time_delta)
     write_pipelines(pipelines)
     #draw_graph(G, intervals)
 
