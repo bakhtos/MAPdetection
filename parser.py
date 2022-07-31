@@ -210,6 +210,41 @@ def generate_call_graph(pptam_dir, tracing_dir, time_delta):
 
     return user_graphs, pipelines
 
+
+def detect_request_bundle(pipelines):
+
+    bundles_service = dict()
+    bundles_endpoint = dict()
+    for user, pipeline in pipelines.items():
+        bundles_service[user] = []
+        bundles_endpoint[user] = []
+        last_call_service = (pipeline[0][1],pipeline[0][2])
+        last_call_endpoint = (pipeline[0][1],pipeline[0][2], pipeline[0][3])
+        count_service = 1
+        count_endpoint = 1
+        for i in range(1, len(pipeline)):
+            current_call_service = (pipeline[i][1], pipeline[i][2])
+            current_call_endpoint = (pipeline[i][1], pipeline[i][2], pipeline[i][3])
+            if current_call_service == last_call_service:
+                count_service += 1
+            else:
+                if count_service >= 2:
+                    bundles_service[user].append((*last_call_service, count_service))
+                    print(f"{user}: Service-level request bundle detected between {last_call_service[0]} and {last_call_service[1]} with count {count_service}")
+                count_service = 1
+                last_call_service = current_call_service
+                    
+            if current_call_endpoint == last_call_endpoint:
+                count_endpoint += 1
+            else:
+                if count_endpoint >= 2:
+                    bundles_endpoint[user].append((*last_call_endpoint, count_endpoint))
+                    print(f"Endpoint-level request bundle detected between {last_call_endpoint[0]} and {last_call_endpoint[1]}{last_call_endpoint[2]} with count {count_endpoint}")
+                count_endpoint = 1
+                last_call_endpoint = current_call_endpoint
+
+        return bundles_service, bundles_endpoint
+
 if __name__ == '__main__':
     
     directory = "kubernetes-istio-sleuth-v0.2.1-separate-load"
@@ -217,6 +252,7 @@ if __name__ == '__main__':
     tracing_dir = os.path.join(directory, 'tracing-log')
     time_delta = timedelta(hours=-8)
     G, pipelines = generate_call_graph(pptam_dir, tracing_dir, time_delta)
-    write_pipelines(pipelines)
+    bundles_service, bundles_endpoint = detect_request_bundle(pipelines)
+    #write_pipelines(pipelines)
     #draw_graph(G, intervals)
 
