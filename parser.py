@@ -94,6 +94,8 @@ def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_c
                 to_service = to_service[3].split('.')[0]
                 endpoint = obj['path']
                 if endpoint is None: endpoint = '/'
+                endpoint = endpoint.split('/')
+                endpoint = '/'.join(endpoint[0:5])
 
                 call_counters[user][(from_service, to_service, endpoint)] += 1
                 call_counters[user_instance][(from_service, to_service, endpoint)] += 1
