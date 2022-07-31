@@ -241,7 +241,7 @@ def detect_request_bundle(pipelines):
             else:
                 if count_endpoint >= 2:
                     bundles_endpoint[user].append((*last_call_endpoint, count_endpoint))
-                    print(f"Endpoint-level request bundle detected between {last_call_endpoint[0]} and {last_call_endpoint[1]}{last_call_endpoint[2]} with count {count_endpoint}")
+                    print(f"{user}: Endpoint-level request bundle detected between {last_call_endpoint[0]} and {last_call_endpoint[1]}{last_call_endpoint[2]} with count {count_endpoint}")
                 count_endpoint = 1
                 last_call_endpoint = current_call_endpoint
 
