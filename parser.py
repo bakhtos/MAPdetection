@@ -95,14 +95,7 @@ def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_c
                 call_counters[user][(from_service, to_service)] += 1
                 call_counters[user_instance][(from_service, to_service)] += 1
                 endpoint = obj['path']
-                if endpoint is not None:
-                    endpoint = endpoint.split('/')
-                    if len(endpoint) >= 5:
-                        endpoint = endpoint[4]
-                    else:
-                        endpoint = endpoint[-1]
-                else:
-                    endpoint = ''
+                if endpoint is None: endpoint = ''
                 pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
                 pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
 
