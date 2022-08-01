@@ -252,7 +252,9 @@ def detect_request_bundle(pipelines, threshold_service=2, threshold_endpoint=2):
             else:
                 if count_service >= threshold_service:
                     bundles_service[user].append((*last_call_service, count_service))
-                    print(f"{user}: Service-level request bundle detected between {last_call_service[0]} and {last_call_service[1]} with count {count_service}")
+                    print(f"{user}: Service-level request bundle detected between"
+                          f"{last_call_service[0]} and {last_call_service[1]}"
+                          f"with count {count_service}")
                 count_service = 1
                 last_call_service = current_call_service
                     
@@ -261,7 +263,9 @@ def detect_request_bundle(pipelines, threshold_service=2, threshold_endpoint=2):
             else:
                 if count_endpoint >= threshold_endpoint:
                     bundles_endpoint[user].append((*last_call_endpoint, count_endpoint))
-                    print(f"{user}: Endpoint-level request bundle detected between {last_call_endpoint[0]} and {last_call_endpoint[1]}{last_call_endpoint[2]} with count {count_endpoint}")
+                    print(f"{user}: Endpoint-level request bundle detected between"
+                          f"{last_call_endpoint[0]} and {last_call_endpoint[1]}"
+                          f"{last_call_endpoint[2]} with count {count_endpoint}")
                 count_endpoint = 1
                 last_call_endpoint = current_call_endpoint
 
