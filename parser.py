@@ -293,7 +293,49 @@ def detect_frontend_integration(G, frontend_services=None, user=None):
                   f"(in-degree = {in_degree})")
 
     return frontend_candidates, frontend_violators
-        
+
+
+def detect_information_holder_resource(G, database_services=None, user=None):
+
+    if database_services is None: database_services = set()
+    if user is None: user = "NoUser"
+
+    D = nx.DiGraph(G)
+
+    ihr_candidates = set()
+    ihr_violators = set()
+    database_call_violators = set()
+    database_no_ihr_violators = database_services.copy()
+
+    for node, out_degree in D.out_degree():
+        zero_degree = out_degree == 0
+        is_database = node in database_services
+        if zero_degree or is_database:
+            if len(preds := D.pred[node]) == 1:
+                pred = [n for n in preds.keys()]
+                pred = pred[0]
+                if len(D.succ[pred]) == 1:
+                    ihr_candidates.add((pred, node))
+                    print(f"{user}: Information Holder Resource - '{pred}' is a "
+                          f"potential IHR for '{node}'")
+                else:
+                    ihr_violators.add((pred, node))
+                    print(f"{user}: Information Holder Resouce Violation - "
+                          f"'{node}' is only accessed through '{pred}', but "
+                          f"'{pred}' calls other services as well.")
+                database_no_ihr_violators -= {node}
+        if not zero_degree and is_database:
+            database_call_violators.add(node)
+            print(f"{user}: Information Holder Resource Violation - '{node}' is designated"
+                  f" as database service but has outgoing calls (out-dergee = {out_degree})")
+
+    for service in database_services:
+        print(f"{user}: Information Holder Resource Violation - '{service}' "
+              f"is designated as database service but no IHR detected.")
+    
+    return ihr_candidates, ihr_violators, database_call_violators, database_no_ihr_violators
+    
+
 
 if __name__ == '__main__':
     
