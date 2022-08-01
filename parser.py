@@ -271,6 +271,28 @@ def detect_request_bundle(pipelines, threshold_service=2, threshold_endpoint=2):
 
     return bundles_service, bundles_endpoint
 
+def detect_frontend_integration(G, frontend_services=None, user=None):
+
+    if frontend_services is None: frontend_services = set()
+    if user is None: user = "NoUser"
+
+    frontend_candidates = set()
+    frontend_violators = set()
+
+    for node, in_degree in G.in_degree():
+        if in_degree == 0:
+            if G.out_degree(node) > 0:
+                frontend_candidates.add(node)
+                print(f"{user}: Frontend Integreation - potential frontend service '{node}' found.")
+        elif node in frontend_services:
+            frontend_violators.add(node)
+            print(f"{user}: Frontend Integration Violation - service '{node}' "
+                  f"is designated as frontend service but has incoming calls "
+                  f"(in-degree = {in_degree})")
+
+    return frontend_candidates, frontend_violators
+        
+
 if __name__ == '__main__':
     
     directory = "kubernetes-istio-sleuth-v0.2.1-separate-load"
