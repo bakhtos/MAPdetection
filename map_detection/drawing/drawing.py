@@ -2,10 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import networkx as nx
 
-import os
-import json
 from collections import Counter
-from datetime import datetime, timedelta
 
 
 def draw_graph(G, intervals, curved_arrows=True):
