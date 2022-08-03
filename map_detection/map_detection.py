@@ -4,6 +4,9 @@ import os
 from collections import Counter
 from datetime import datetime, timedelta
 
+from map_detection.utils import *
+
+__all__ = ['generate_call_graph']
 
 def generate_call_graph(pptam_dir, tracing_dir, time_delta):
     user_boundaries, instance_boundaries = detect_users(pptam_dir, time_delta)
