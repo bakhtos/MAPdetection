@@ -3,6 +3,7 @@ import json
 from collections import Counter
 from datetime import datetime, timedelta
 
+__all__ = ['detect_users', 'parse_logs', 'write_pipelines']
 
 def detect_users(directory, time_delta=None):
     '''Detect all Users appearing in pptam logs.
