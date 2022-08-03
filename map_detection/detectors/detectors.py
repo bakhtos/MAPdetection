@@ -1,5 +1,8 @@
 import networkx as nx
 
+__all__ = ['detect_request_bundle', 'detect_frontend_integration',
+           'detect_information_holder_resource']
+
 
 def detect_request_bundle(pipelines, threshold_service=2, threshold_endpoint=2):
     '''Detect request bundle anti-pattern, i.e. consecutive calls between same services.
