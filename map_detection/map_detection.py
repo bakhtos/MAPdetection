@@ -6,9 +6,9 @@ from datetime import datetime, timedelta
 
 from map_detection.utils import *
 
-__all__ = ['generate_call_graph']
+__all__ = ['generate_call_graphs']
 
-def generate_call_graph(pptam_dir, tracing_dir, time_delta):
+def generate_call_graphs(pptam_dir, tracing_dir, time_delta):
     user_boundaries, instance_boundaries = detect_users(pptam_dir, time_delta)
 
     # Get calls and pipelines for each user using logs of each service
