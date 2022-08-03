@@ -31,16 +31,3 @@ def generate_call_graph(pptam_dir, tracing_dir, time_delta):
             G.add_edge(keys[0], keys[1], key=keys[2], weight=weight)
 
     return user_graphs, pipelines
-
-
-if __name__ == '__main__':
-    
-    directory = "kubernetes-istio-sleuth-v0.2.1-separate-load"
-    pptam_dir = os.path.join(directory, 'pptam')
-    tracing_dir = os.path.join(directory, 'tracing-log')
-    time_delta = timedelta(hours=-8)
-    G, pipelines = generate_call_graph(pptam_dir, tracing_dir, time_delta)
-    bundles_service, bundles_endpoint = detect_request_bundle(pipelines)
-    #write_pipelines(pipelines)
-    #draw_graph(G, intervals)
-
