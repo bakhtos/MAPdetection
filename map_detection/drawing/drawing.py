@@ -4,6 +4,7 @@ import networkx as nx
 
 from collections import Counter
 
+__all__ = ['draw_graph']
 
 def draw_graph(G, intervals, curved_arrows=True):
 
