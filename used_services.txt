@@ -1,0 +1,61 @@
+ts-ui-dashboard
+ts-travel-service
+	/api/v1/travelservice/trip_detail
+	/api/v1/travelservice/train_types
+	/api/v1/travelservice/trips
+	/api/v1/travelservice/routes
+ts-ticketinfo-service
+	/api/v1/ticketinfoservice/ticketinfo
+ts-basic-service
+	/api/v1/basicservice/basic
+ts-station-service
+	/api/v1/stationservice/stations
+ts-route-service
+	/api/v1/routeservice/routes
+ts-train-service
+	/api/v1/trainservice/trains
+ts-price-service
+	/api/v1/priceservice/prices
+ts-order-service
+	/api/v1/orderservice/order
+ts-seat-service
+	/api/v1/seatservice/seats
+ts-config-service
+	/api/v1/configservice/configs
+ts-auth-service
+	/api/v1/users/login
+	/api/v1/auth
+ts-admin-user-service
+	/api/v1/adminuserservice/users
+ts-user-service
+	/api/v1/userservice/users
+ts-assurance-service
+	/api/v1/assuranceservice/assurances
+ts-food-service
+	/api/v1/foodservice/foods
+	/api/v1/foodservice/orders
+ts-food-map-service
+	/api/v1/foodmapservice/foodstores
+	/api/v1/foodmapservice/trainfoods
+ts-contacts-service
+	/api/v1/contactservice/contacts
+ts-preserve-service
+	/api/v1/preserveservice/preserve
+ts-security-service
+	/api/v1/securityservice/securityConfigs
+ts-order-other-service
+	/api/v1/orderOtherService/orderOther
+ts-inside-payment-service
+	/api/v1/inside_pay_service/inside_payment
+ts-payment-service
+	/api/v1/paymentservice/payment
+ts-cancel-service
+	/api/v1/cancelservice/cancel
+ts-voucher-service
+	/getVoucher
+ts-voucher-mysql
+	/
+ts-consign-service
+	/api/v1/consignservice/consigns
+ts-consign-price-service
+	/api/v1/consignpriceservice/consignprice
