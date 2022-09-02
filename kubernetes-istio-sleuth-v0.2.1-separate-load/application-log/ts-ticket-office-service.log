@@ -1,0 +1,6 @@
+
+> ts-ticket-office-service@0.0.0 start
+> node bin/www
+
+initMongo连接上数据库啦！
+init data successful!

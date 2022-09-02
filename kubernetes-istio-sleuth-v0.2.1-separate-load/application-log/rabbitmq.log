@@ -1,0 +1,578 @@
+2022-06-13 02:23:26.178663+00:00 [info] <0.221.0> Feature flags: list of feature flags found:
+2022-06-13 02:23:26.223290+00:00 [info] <0.221.0> Feature flags:   [ ] classic_mirrored_queue_version
+2022-06-13 02:23:26.223375+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings
+2022-06-13 02:23:26.223438+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status
+2022-06-13 02:23:26.223606+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue
+2022-06-13 02:23:26.223654+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue
+2022-06-13 02:23:26.223729+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits
+2022-06-13 02:23:26.223768+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata
+2022-06-13 02:23:26.223852+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes
+2022-06-13 02:23:26.968410+00:00 [notice] <0.44.0> Application syslog exited with reason: stopped
+2022-06-13 02:23:26.968803+00:00 [notice] <0.221.0> Logging: switching to configured handler(s); following messages may not be visible in this log output
+[38;5;87m2022-06-13 02:23:26.985626+00:00 [notice] <0.221.0> Logging: configured log handlers are now ACTIVE[0m
+2022-06-13 02:23:27.324968+00:00 [info] <0.221.0> ra: starting system quorum_queues[0m
+2022-06-13 02:23:27.325099+00:00 [info] <0.221.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh/quorum/rabbit@rabbitmq-68fb9b645c-kx7zh[0m
+2022-06-13 02:23:27.377344+00:00 [info] <0.257.0> ra system 'quorum_queues' running pre init for 0 registered servers[0m
+2022-06-13 02:23:27.386081+00:00 [info] <0.258.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered[0m
+[38;5;87m2022-06-13 02:23:27.397807+00:00 [notice] <0.263.0> WAL: ra_log_wal init, open tbls: ra_log_open_mem_tables, closed tbls: ra_log_closed_mem_tables[0m
+2022-06-13 02:23:27.404919+00:00 [info] <0.221.0> ra: starting system coordination[0m
+2022-06-13 02:23:27.405002+00:00 [info] <0.221.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh/coordination/rabbit@rabbitmq-68fb9b645c-kx7zh[0m
+2022-06-13 02:23:27.406314+00:00 [info] <0.270.0> ra system 'coordination' running pre init for 0 registered servers[0m
+2022-06-13 02:23:27.407015+00:00 [info] <0.271.0> ra: meta data store initialised for system coordination. 0 record(s) recovered[0m
+[38;5;87m2022-06-13 02:23:27.407206+00:00 [notice] <0.276.0> WAL: ra_coordination_log_wal init, open tbls: ra_coordination_log_open_mem_tables, closed tbls: ra_coordination_log_closed_mem_tables[0m
+2022-06-13 02:23:27.410181+00:00 [info] <0.221.0> [0m
+2022-06-13 02:23:27.410181+00:00 [info] <0.221.0>  Starting RabbitMQ 3.10.5 on Erlang 24.3.4.1 [jit][0m
+2022-06-13 02:23:27.410181+00:00 [info] <0.221.0>  Copyright (c) 2007-2022 VMware, Inc. or its affiliates.[0m
+2022-06-13 02:23:27.410181+00:00 [info] <0.221.0>  Licensed under the MPL 2.0. Website: https://rabbitmq.com[0m
+
+  ##  ##      RabbitMQ 3.10.5
+  ##  ##
+  ##########  Copyright (c) 2007-2022 VMware, Inc. or its affiliates.
+  ######  ##
+  ##########  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+
+  Erlang:      24.3.4.1 [jit]
+  TLS Library: OpenSSL - OpenSSL 1.1.1o  3 May 2022
+
+  Doc guides:  https://rabbitmq.com/documentation.html
+  Support:     https://rabbitmq.com/contact.html
+  Tutorials:   https://rabbitmq.com/getstarted.html
+  Monitoring:  https://rabbitmq.com/monitoring.html
+
+  Logs: /var/log/rabbitmq/rabbit@rabbitmq-68fb9b645c-kx7zh_upgrade.log
+        <stdout>
+
+  Config file(s): /etc/rabbitmq/conf.d/10-defaults.conf
+                  /etc/rabbitmq/conf.d/management_agent.disable_metrics_collector.conf
+
+  Starting broker...2022-06-13 02:23:27.412082+00:00 [info] <0.221.0> [0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  node           : rabbit@rabbitmq-68fb9b645c-kx7zh[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  home dir       : /var/lib/rabbitmq[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  config file(s) : /etc/rabbitmq/conf.d/10-defaults.conf[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>                 : /etc/rabbitmq/conf.d/management_agent.disable_metrics_collector.conf[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  cookie hash    : xqecZEEvxBVxQwxTKSGOgw==[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  log(s)         : /var/log/rabbitmq/rabbit@rabbitmq-68fb9b645c-kx7zh_upgrade.log[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>                 : <stdout>[0m
+2022-06-13 02:23:27.412082+00:00 [info] <0.221.0>  database dir   : /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh[0m
+2022-06-13 02:23:27.626105+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:27.626272+00:00 [info] <0.221.0> Feature flags:   [ ] classic_mirrored_queue_version[0m
+2022-06-13 02:23:27.626316+00:00 [info] <0.221.0> Feature flags:   [ ] drop_unroutable_metric[0m
+2022-06-13 02:23:27.626345+00:00 [info] <0.221.0> Feature flags:   [ ] empty_basic_get_metric[0m
+2022-06-13 02:23:27.626371+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:27.626412+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:27.626440+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:27.626465+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:27.626491+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:27.626516+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:27.626552+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.689402+00:00 [info] <0.221.0> Running boot step pre_boot defined by app rabbit[0m
+2022-06-13 02:23:33.689648+00:00 [info] <0.221.0> Running boot step rabbit_global_counters defined by app rabbit[0m
+2022-06-13 02:23:33.690657+00:00 [info] <0.221.0> Running boot step rabbit_osiris_metrics defined by app rabbit[0m
+2022-06-13 02:23:33.691045+00:00 [info] <0.221.0> Running boot step rabbit_core_metrics defined by app rabbit[0m
+2022-06-13 02:23:33.692555+00:00 [info] <0.221.0> Running boot step rabbit_alarm defined by app rabbit[0m
+2022-06-13 02:23:33.703719+00:00 [info] <0.288.0> Memory high watermark set to 8814 MiB (9242312704 bytes) of 22035 MiB (23105781760 bytes) total[0m
+2022-06-13 02:23:33.714630+00:00 [info] <0.290.0> Enabling free disk space monitoring[0m
+2022-06-13 02:23:33.714724+00:00 [info] <0.290.0> Disk free limit set to 50MB[0m
+2022-06-13 02:23:33.724267+00:00 [info] <0.221.0> Running boot step code_server_cache defined by app rabbit[0m
+2022-06-13 02:23:33.724503+00:00 [info] <0.221.0> Running boot step file_handle_cache defined by app rabbit[0m
+2022-06-13 02:23:33.725112+00:00 [info] <0.295.0> Limiting to approx 1048479 file handles (943629 sockets)[0m
+2022-06-13 02:23:33.725497+00:00 [info] <0.296.0> FHC read buffering: OFF[0m
+2022-06-13 02:23:33.725587+00:00 [info] <0.296.0> FHC write buffering: ON[0m
+2022-06-13 02:23:33.726486+00:00 [info] <0.221.0> Running boot step worker_pool defined by app rabbit[0m
+2022-06-13 02:23:33.726708+00:00 [info] <0.278.0> Will use 8 processes for default worker pool[0m
+2022-06-13 02:23:33.726783+00:00 [info] <0.278.0> Starting worker pool 'worker_pool' with 8 processes in it[0m
+2022-06-13 02:23:33.727937+00:00 [info] <0.221.0> Running boot step database defined by app rabbit[0m
+2022-06-13 02:23:33.728480+00:00 [info] <0.221.0> Node database directory at /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh is empty. Assuming we need to join an existing cluster or initialise from scratch...[0m
+2022-06-13 02:23:33.728626+00:00 [info] <0.221.0> Configured peer discovery backend: rabbit_peer_discovery_classic_config[0m
+2022-06-13 02:23:33.728693+00:00 [info] <0.221.0> Will try to lock with peer discovery backend rabbit_peer_discovery_classic_config[0m
+2022-06-13 02:23:33.728873+00:00 [info] <0.221.0> All discovered existing cluster peers:[0m
+2022-06-13 02:23:33.729056+00:00 [info] <0.221.0> Discovered no peer nodes to cluster with. Some discovery backends can filter nodes out based on a readiness criteria. Enabling debug logging might help troubleshoot.[0m
+[38;5;87m2022-06-13 02:23:33.732221+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped[0m
+2022-06-13 02:23:33.838444+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:33.838749+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:33.852938+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:33.853138+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:33.853218+00:00 [info] <0.221.0> Feature flag `classic_mirrored_queue_version`: supported, attempt to enable...[0m
+2022-06-13 02:23:33.853339+00:00 [info] <0.221.0> Feature flag `classic_mirrored_queue_version`: mark as enabled=state_changing[0m
+2022-06-13 02:23:33.854869+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.854942+00:00 [info] <0.221.0> Feature flags:   [~] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.855041+00:00 [info] <0.221.0> Feature flags:   [ ] drop_unroutable_metric[0m
+2022-06-13 02:23:33.855094+00:00 [info] <0.221.0> Feature flags:   [ ] empty_basic_get_metric[0m
+2022-06-13 02:23:33.855158+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.855210+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.855250+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.855324+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.855355+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.855431+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.855487+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.873865+00:00 [info] <0.221.0> Feature flag `classic_mirrored_queue_version`: mark as enabled=true[0m
+2022-06-13 02:23:33.876200+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.876339+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.876415+00:00 [info] <0.221.0> Feature flags:   [ ] drop_unroutable_metric[0m
+2022-06-13 02:23:33.876456+00:00 [info] <0.221.0> Feature flags:   [ ] empty_basic_get_metric[0m
+2022-06-13 02:23:33.876707+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.876795+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.876860+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.877044+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.877197+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.877252+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.877304+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.892324+00:00 [info] <0.221.0> Feature flag `drop_unroutable_metric`: supported, attempt to enable...[0m
+2022-06-13 02:23:33.892637+00:00 [info] <0.221.0> Feature flag `drop_unroutable_metric`: mark as enabled=state_changing[0m
+2022-06-13 02:23:33.894014+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.894133+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.894203+00:00 [info] <0.221.0> Feature flags:   [~] drop_unroutable_metric[0m
+2022-06-13 02:23:33.894239+00:00 [info] <0.221.0> Feature flags:   [ ] empty_basic_get_metric[0m
+2022-06-13 02:23:33.894284+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.894313+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.894341+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.894376+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.894401+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.894426+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.894457+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.912999+00:00 [info] <0.221.0> Feature flag `drop_unroutable_metric`: mark as enabled=true[0m
+2022-06-13 02:23:33.917900+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.918126+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.918357+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.918412+00:00 [info] <0.221.0> Feature flags:   [ ] empty_basic_get_metric[0m
+2022-06-13 02:23:33.918501+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.918540+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.918568+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.918647+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.919021+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.919080+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.919139+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.931759+00:00 [info] <0.221.0> Feature flag `empty_basic_get_metric`: supported, attempt to enable...[0m
+2022-06-13 02:23:33.931902+00:00 [info] <0.221.0> Feature flag `empty_basic_get_metric`: mark as enabled=state_changing[0m
+2022-06-13 02:23:33.932900+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.933035+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.933265+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.933341+00:00 [info] <0.221.0> Feature flags:   [~] empty_basic_get_metric[0m
+2022-06-13 02:23:33.933389+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.933418+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.933444+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.933482+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.933507+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.933531+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.933612+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.945144+00:00 [info] <0.221.0> Feature flag `empty_basic_get_metric`: mark as enabled=true[0m
+2022-06-13 02:23:33.949650+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.949795+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.949916+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.949955+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:33.950024+00:00 [info] <0.221.0> Feature flags:   [ ] implicit_default_bindings[0m
+2022-06-13 02:23:33.950137+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.950176+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.950208+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.950239+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.950266+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.950297+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.963293+00:00 [info] <0.221.0> Feature flag `implicit_default_bindings`: supported, attempt to enable...[0m
+2022-06-13 02:23:33.963451+00:00 [info] <0.221.0> Feature flag `implicit_default_bindings`: mark as enabled=state_changing[0m
+2022-06-13 02:23:33.964946+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.965055+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.965147+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.965179+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:33.965239+00:00 [info] <0.221.0> Feature flags:   [~] implicit_default_bindings[0m
+2022-06-13 02:23:33.965329+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.965437+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.965514+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.965545+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.965612+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.965674+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.979792+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 0 retries left[0m
+2022-06-13 02:23:33.980010+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:33.980105+00:00 [info] <0.221.0> Feature flag `implicit_default_bindings`: mark as enabled=true[0m
+2022-06-13 02:23:33.982900+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.983110+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.983213+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.983252+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:33.983393+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:33.983431+00:00 [info] <0.221.0> Feature flags:   [ ] maintenance_mode_status[0m
+2022-06-13 02:23:33.983459+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.983491+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.983552+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.983584+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.983617+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:33.996575+00:00 [info] <0.221.0> Feature flag `maintenance_mode_status`: supported, attempt to enable...[0m
+2022-06-13 02:23:33.997203+00:00 [info] <0.221.0> Feature flag `maintenance_mode_status`: mark as enabled=state_changing[0m
+2022-06-13 02:23:33.998787+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:33.998898+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:33.998989+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:33.999020+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:33.999079+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:33.999138+00:00 [info] <0.221.0> Feature flags:   [~] maintenance_mode_status[0m
+2022-06-13 02:23:33.999214+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:33.999293+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:33.999319+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:33.999344+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:33.999405+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.024241+00:00 [info] <0.221.0> Creating table rabbit_node_maintenance_states for feature flag `maintenance_mode_status`[0m
+2022-06-13 02:23:34.033078+00:00 [info] <0.221.0> Feature flag `maintenance_mode_status`: mark as enabled=true[0m
+2022-06-13 02:23:34.036524+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.036706+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.036782+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.036812+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.036944+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.036984+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.037011+00:00 [info] <0.221.0> Feature flags:   [ ] quorum_queue[0m
+2022-06-13 02:23:34.037076+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:34.037143+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:34.037207+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.037248+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.054322+00:00 [info] <0.221.0> Feature flag `quorum_queue`: supported, attempt to enable...[0m
+2022-06-13 02:23:34.054522+00:00 [info] <0.221.0> Feature flag `quorum_queue`: mark as enabled=state_changing[0m
+2022-06-13 02:23:34.055849+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.055946+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.056034+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.056066+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.056134+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.056170+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.056197+00:00 [info] <0.221.0> Feature flags:   [~] quorum_queue[0m
+2022-06-13 02:23:34.056232+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:34.056258+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:34.056318+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.056359+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.073123+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:34.073336+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:34.073382+00:00 [info] <0.221.0> Feature flag `quorum_queue`:   migrating Mnesia table rabbit_queue...[0m
+2022-06-13 02:23:34.114076+00:00 [info] <0.221.0> Feature flag `quorum_queue`:   migrating Mnesia table rabbit_durable_queue...[0m
+2022-06-13 02:23:34.149102+00:00 [info] <0.221.0> Feature flag `quorum_queue`:   Mnesia tables migration done[0m
+2022-06-13 02:23:34.149271+00:00 [info] <0.221.0> Feature flag `quorum_queue`: mark as enabled=true[0m
+2022-06-13 02:23:34.153159+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.153288+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.153397+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.153433+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.153650+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.153688+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.153716+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.153749+00:00 [info] <0.221.0> Feature flags:   [ ] stream_queue[0m
+2022-06-13 02:23:34.153875+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:34.153908+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.153939+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.169624+00:00 [info] <0.221.0> Feature flag `stream_queue`: supported, attempt to enable...[0m
+2022-06-13 02:23:34.169870+00:00 [info] <0.221.0> Feature flag `stream_queue`: mark as enabled=state_changing[0m
+2022-06-13 02:23:34.171063+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.171167+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.171234+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.171299+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.171360+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.171433+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.171517+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.171592+00:00 [info] <0.221.0> Feature flags:   [~] stream_queue[0m
+2022-06-13 02:23:34.171627+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:34.171654+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.171686+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.197437+00:00 [info] <0.221.0> Feature flag `stream_queue`: mark as enabled=true[0m
+2022-06-13 02:23:34.201495+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.201653+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.201712+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.201741+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.201851+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.201959+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.202026+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.202196+00:00 [info] <0.221.0> Feature flags:   [x] stream_queue[0m
+2022-06-13 02:23:34.202265+00:00 [info] <0.221.0> Feature flags:   [ ] user_limits[0m
+2022-06-13 02:23:34.202297+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.202328+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.216128+00:00 [info] <0.221.0> Feature flag `user_limits`: supported, attempt to enable...[0m
+2022-06-13 02:23:34.216324+00:00 [info] <0.221.0> Feature flag `user_limits`: mark as enabled=state_changing[0m
+2022-06-13 02:23:34.218654+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.218823+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.219126+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.219379+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.219535+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.219642+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.219679+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.220247+00:00 [info] <0.221.0> Feature flags:   [x] stream_queue[0m
+2022-06-13 02:23:34.220680+00:00 [info] <0.221.0> Feature flags:   [~] user_limits[0m
+2022-06-13 02:23:34.221120+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.221315+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.235686+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:34.235957+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:34.268240+00:00 [info] <0.221.0> Feature flag `user_limits`: mark as enabled=true[0m
+2022-06-13 02:23:34.271990+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.272120+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.272206+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.272258+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.272363+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.272426+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.272515+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.272770+00:00 [info] <0.221.0> Feature flags:   [x] stream_queue[0m
+2022-06-13 02:23:34.272833+00:00 [info] <0.221.0> Feature flags:   [x] user_limits[0m
+2022-06-13 02:23:34.272890+00:00 [info] <0.221.0> Feature flags:   [ ] virtual_host_metadata[0m
+2022-06-13 02:23:34.272951+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.294104+00:00 [info] <0.221.0> Feature flag `virtual_host_metadata`: supported, attempt to enable...[0m
+2022-06-13 02:23:34.294316+00:00 [info] <0.221.0> Feature flag `virtual_host_metadata`: mark as enabled=state_changing[0m
+2022-06-13 02:23:34.296091+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.296204+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.296262+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.296327+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.296385+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.296447+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.296483+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.296858+00:00 [info] <0.221.0> Feature flags:   [x] stream_queue[0m
+2022-06-13 02:23:34.296908+00:00 [info] <0.221.0> Feature flags:   [x] user_limits[0m
+2022-06-13 02:23:34.296951+00:00 [info] <0.221.0> Feature flags:   [~] virtual_host_metadata[0m
+2022-06-13 02:23:34.297006+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.314221+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:34.314489+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:34.348980+00:00 [info] <0.221.0> Feature flag `virtual_host_metadata`: mark as enabled=true[0m
+2022-06-13 02:23:34.352856+00:00 [info] <0.221.0> Feature flags: list of feature flags found:[0m
+2022-06-13 02:23:34.353047+00:00 [info] <0.221.0> Feature flags:   [x] classic_mirrored_queue_version[0m
+2022-06-13 02:23:34.353095+00:00 [info] <0.221.0> Feature flags:   [x] drop_unroutable_metric[0m
+2022-06-13 02:23:34.353138+00:00 [info] <0.221.0> Feature flags:   [x] empty_basic_get_metric[0m
+2022-06-13 02:23:34.353194+00:00 [info] <0.221.0> Feature flags:   [x] implicit_default_bindings[0m
+2022-06-13 02:23:34.353293+00:00 [info] <0.221.0> Feature flags:   [x] maintenance_mode_status[0m
+2022-06-13 02:23:34.353328+00:00 [info] <0.221.0> Feature flags:   [x] quorum_queue[0m
+2022-06-13 02:23:34.353354+00:00 [info] <0.221.0> Feature flags:   [x] stream_queue[0m
+2022-06-13 02:23:34.353394+00:00 [info] <0.221.0> Feature flags:   [x] user_limits[0m
+2022-06-13 02:23:34.353424+00:00 [info] <0.221.0> Feature flags:   [x] virtual_host_metadata[0m
+2022-06-13 02:23:34.353466+00:00 [info] <0.221.0> Feature flags: feature flag states written to disk: yes[0m
+2022-06-13 02:23:34.367847+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:34.368134+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:34.391817+00:00 [info] <0.221.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+2022-06-13 02:23:34.392093+00:00 [info] <0.221.0> Successfully synced tables from a peer[0m
+2022-06-13 02:23:34.392266+00:00 [info] <0.221.0> Peer discovery backend rabbit_peer_discovery_classic_config does not support registration, skipping registration.[0m
+2022-06-13 02:23:34.392402+00:00 [info] <0.221.0> Will try to unlock with peer discovery backend rabbit_peer_discovery_classic_config[0m
+2022-06-13 02:23:34.392662+00:00 [info] <0.221.0> Running boot step database_sync defined by app rabbit[0m
+2022-06-13 02:23:34.392967+00:00 [info] <0.221.0> Running boot step feature_flags defined by app rabbit[0m
+2022-06-13 02:23:34.393269+00:00 [info] <0.221.0> Running boot step codec_correctness_check defined by app rabbit[0m
+2022-06-13 02:23:34.393442+00:00 [info] <0.221.0> Running boot step external_infrastructure defined by app rabbit[0m
+2022-06-13 02:23:34.393497+00:00 [info] <0.221.0> Running boot step rabbit_registry defined by app rabbit[0m
+2022-06-13 02:23:34.393760+00:00 [info] <0.221.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+2022-06-13 02:23:34.394016+00:00 [info] <0.221.0> Running boot step rabbit_queue_location_random defined by app rabbit[0m
+2022-06-13 02:23:34.394094+00:00 [info] <0.221.0> Running boot step rabbit_event defined by app rabbit[0m
+2022-06-13 02:23:34.394772+00:00 [info] <0.221.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+2022-06-13 02:23:34.395142+00:00 [info] <0.221.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+2022-06-13 02:23:34.395356+00:00 [info] <0.221.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+2022-06-13 02:23:34.395735+00:00 [info] <0.221.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+2022-06-13 02:23:34.395959+00:00 [info] <0.221.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+2022-06-13 02:23:34.396163+00:00 [info] <0.221.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+2022-06-13 02:23:34.396323+00:00 [info] <0.221.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit[0m
+2022-06-13 02:23:34.396502+00:00 [info] <0.221.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit[0m
+2022-06-13 02:23:34.396906+00:00 [info] <0.221.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit[0m
+2022-06-13 02:23:34.397135+00:00 [info] <0.221.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+2022-06-13 02:23:34.397200+00:00 [info] <0.221.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+2022-06-13 02:23:34.397310+00:00 [info] <0.221.0> Running boot step rabbit_queue_location_client_local defined by app rabbit[0m
+2022-06-13 02:23:34.397568+00:00 [info] <0.221.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit[0m
+2022-06-13 02:23:34.397725+00:00 [info] <0.221.0> Running boot step kernel_ready defined by app rabbit[0m
+2022-06-13 02:23:34.397770+00:00 [info] <0.221.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+2022-06-13 02:23:34.398019+00:00 [info] <0.221.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+2022-06-13 02:23:34.400806+00:00 [info] <0.564.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+2022-06-13 02:23:34.401057+00:00 [info] <0.221.0> Running boot step guid_generator defined by app rabbit[0m
+2022-06-13 02:23:34.405090+00:00 [info] <0.221.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+2022-06-13 02:23:34.405441+00:00 [info] <0.568.0> Starting rabbit_node_monitor[0m
+2022-06-13 02:23:34.405977+00:00 [info] <0.221.0> Running boot step delegate_sup defined by app rabbit[0m
+2022-06-13 02:23:34.407456+00:00 [info] <0.221.0> Running boot step rabbit_memory_monitor defined by app rabbit[0m
+2022-06-13 02:23:34.408167+00:00 [info] <0.221.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+2022-06-13 02:23:34.408448+00:00 [info] <0.221.0> Running boot step core_initialized defined by app rabbit[0m
+2022-06-13 02:23:34.408582+00:00 [info] <0.221.0> Running boot step upgrade_queues defined by app rabbit[0m
+2022-06-13 02:23:34.423201+00:00 [info] <0.221.0> message_store upgrades: 1 to apply[0m
+2022-06-13 02:23:34.423433+00:00 [info] <0.221.0> message_store upgrades: Applying rabbit_variable_queue:move_messages_to_vhost_store[0m
+2022-06-13 02:23:34.423855+00:00 [info] <0.221.0> message_store upgrades: No durable queues found. Skipping message store migration[0m
+2022-06-13 02:23:34.424154+00:00 [info] <0.221.0> message_store upgrades: Removing the old message store data[0m
+2022-06-13 02:23:34.426525+00:00 [info] <0.221.0> message_store upgrades: All upgrades applied successfully[0m
+2022-06-13 02:23:34.443538+00:00 [info] <0.221.0> Running boot step channel_tracking defined by app rabbit[0m
+2022-06-13 02:23:34.451185+00:00 [info] <0.221.0> Setting up a table for channel tracking on this node: 'tracked_channel_on_node_rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 02:23:34.457143+00:00 [info] <0.221.0> Setting up a table for channel tracking on this node: 'tracked_channel_table_per_user_on_node_rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 02:23:34.457752+00:00 [info] <0.221.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+2022-06-13 02:23:34.458065+00:00 [info] <0.221.0> Running boot step connection_tracking defined by app rabbit[0m
+2022-06-13 02:23:34.468264+00:00 [info] <0.221.0> Setting up a table for connection tracking on this node: 'tracked_connection_on_node_rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 02:23:34.480299+00:00 [info] <0.221.0> Setting up a table for per-vhost connection counting on this node: 'tracked_connection_per_vhost_on_node_rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 02:23:34.493537+00:00 [info] <0.221.0> Setting up a table for per-user connection counting on this node: 'tracked_connection_table_per_user_on_node_rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 02:23:34.494200+00:00 [info] <0.221.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+2022-06-13 02:23:34.494390+00:00 [info] <0.221.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+2022-06-13 02:23:34.494905+00:00 [info] <0.221.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+2022-06-13 02:23:34.495270+00:00 [info] <0.221.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit[0m
+2022-06-13 02:23:34.496290+00:00 [info] <0.221.0> Running boot step rabbit_policies defined by app rabbit[0m
+2022-06-13 02:23:34.497268+00:00 [info] <0.221.0> Running boot step rabbit_policy defined by app rabbit[0m
+2022-06-13 02:23:34.497429+00:00 [info] <0.221.0> Running boot step rabbit_queue_location_validator defined by app rabbit[0m
+2022-06-13 02:23:34.497504+00:00 [info] <0.221.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit[0m
+2022-06-13 02:23:34.497624+00:00 [info] <0.221.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+2022-06-13 02:23:34.498137+00:00 [info] <0.221.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+2022-06-13 02:23:34.498322+00:00 [info] <0.221.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent[0m
+2022-06-13 02:23:34.498619+00:00 [info] <0.221.0> Management plugin: using rates mode 'basic'[0m
+2022-06-13 02:23:34.499951+00:00 [info] <0.221.0> Running boot step recovery defined by app rabbit[0m
+2022-06-13 02:23:34.502796+00:00 [info] <0.221.0> Running boot step empty_db_check defined by app rabbit[0m
+2022-06-13 02:23:34.502943+00:00 [info] <0.221.0> Will seed default virtual host and user...[0m
+2022-06-13 02:23:34.503196+00:00 [info] <0.221.0> Adding vhost '/' (description: 'Default virtual host', tags: [])[0m
+2022-06-13 02:23:34.523541+00:00 [info] <0.630.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+2022-06-13 02:23:34.525772+00:00 [info] <0.630.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+2022-06-13 02:23:34.531884+00:00 [info] <0.630.0> Starting message stores for vhost '/'[0m
+2022-06-13 02:23:34.532474+00:00 [info] <0.635.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index[0m
+2022-06-13 02:23:34.534413+00:00 [info] <0.630.0> Started message store of type transient for vhost '/'[0m
+2022-06-13 02:23:34.534756+00:00 [info] <0.639.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index[0m
+[38;5;214m2022-06-13 02:23:34.537672+00:00 [warning] <0.639.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+2022-06-13 02:23:34.539914+00:00 [info] <0.630.0> Started message store of type persistent for vhost '/'[0m
+2022-06-13 02:23:34.540135+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_classic_queue took 13ms[0m
+2022-06-13 02:23:34.540320+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+2022-06-13 02:23:34.540370+00:00 [info] <0.630.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+2022-06-13 02:23:34.545213+00:00 [info] <0.221.0> Created user 'guest'[0m
+2022-06-13 02:23:34.547380+00:00 [info] <0.221.0> Successfully set user tags for user 'guest' to [administrator][0m
+2022-06-13 02:23:34.550393+00:00 [info] <0.221.0> Successfully set permissions for 'guest' in virtual host '/' to '.*', '.*', '.*'[0m
+2022-06-13 02:23:34.550620+00:00 [info] <0.221.0> Running boot step rabbit_looking_glass defined by app rabbit[0m
+2022-06-13 02:23:34.550684+00:00 [info] <0.221.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+2022-06-13 02:23:34.551071+00:00 [info] <0.221.0> Running boot step background_gc defined by app rabbit[0m
+2022-06-13 02:23:34.551301+00:00 [info] <0.221.0> Running boot step routing_ready defined by app rabbit[0m
+2022-06-13 02:23:34.551465+00:00 [info] <0.221.0> Running boot step pre_flight defined by app rabbit[0m
+2022-06-13 02:23:34.551507+00:00 [info] <0.221.0> Running boot step notify_cluster defined by app rabbit[0m
+2022-06-13 02:23:34.551590+00:00 [info] <0.221.0> Running boot step networking defined by app rabbit[0m
+2022-06-13 02:23:34.551629+00:00 [info] <0.221.0> Running boot step rabbit_maintenance_mode_state defined by app rabbit[0m
+2022-06-13 02:23:34.551661+00:00 [info] <0.221.0> Creating table rabbit_node_maintenance_states for feature flag `maintenance_mode_status`[0m
+2022-06-13 02:23:34.552013+00:00 [info] <0.221.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+2022-06-13 02:23:34.552171+00:00 [info] <0.278.0> Starting worker pool 'definition_import_pool' with 8 processes in it[0m
+2022-06-13 02:23:34.553459+00:00 [info] <0.221.0> Running boot step cluster_name defined by app rabbit[0m
+2022-06-13 02:23:34.553737+00:00 [info] <0.221.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-YftWcmD6Ttraumrw3l1UrQ'[0m
+2022-06-13 02:23:34.556171+00:00 [info] <0.221.0> Running boot step direct_client defined by app rabbit[0m
+2022-06-13 02:23:34.556794+00:00 [info] <0.677.0> Resetting node maintenance status[0m
+2022-06-13 02:23:34.606122+00:00 [info] <0.704.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+2022-06-13 02:23:34.606484+00:00 [info] <0.677.0> Ready to start client connection listeners[0m
+2022-06-13 02:23:34.619843+00:00 [info] <0.748.0> started TCP listener on [::]:5672[0m
+ completed with 3 plugins.
+2022-06-13 02:23:34.839238+00:00 [info] <0.677.0> Server startup complete; 3 plugins started.[0m
+2022-06-13 02:23:34.839238+00:00 [info] <0.677.0>  * rabbitmq_prometheus[0m
+2022-06-13 02:23:34.839238+00:00 [info] <0.677.0>  * rabbitmq_web_dispatch[0m
+2022-06-13 02:23:34.839238+00:00 [info] <0.677.0>  * rabbitmq_management_agent[0m
+2022-06-13 02:31:39.786125+00:00 [info] <0.919.0> accepting AMQP connection <0.919.0> (127.0.0.6:36159 -> 10.244.0.36:5672)[0m
+2022-06-13 02:31:40.177122+00:00 [info] <0.919.0> connection <0.919.0> (127.0.0.6:36159 -> 10.244.0.36:5672) has a client-provided name: rabbitConnectionFactory#6314d89c:0[0m
+2022-06-13 02:31:40.213387+00:00 [info] <0.919.0> connection <0.919.0> (127.0.0.6:36159 -> 10.244.0.36:5672 - rabbitConnectionFactory#6314d89c:0): user 'guest' authenticated and granted access to vhost '/'[0m
+2022-06-13 02:32:35.928542+00:00 [info] <0.960.0> accepting AMQP connection <0.960.0> (127.0.0.6:47675 -> 10.244.0.36:5672)[0m
+2022-06-13 02:32:36.425654+00:00 [info] <0.960.0> connection <0.960.0> (127.0.0.6:47675 -> 10.244.0.36:5672) has a client-provided name: rabbitConnectionFactory#6d4a3473:0[0m
+2022-06-13 02:32:36.432464+00:00 [info] <0.960.0> connection <0.960.0> (127.0.0.6:47675 -> 10.244.0.36:5672 - rabbitConnectionFactory#6d4a3473:0): user 'guest' authenticated and granted access to vhost '/'[0m
+[38;5;160m2022-06-13 04:37:38.815988+00:00 [error] <0.290.0> Command timed out: '/usr/bin/df -kP /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> ** Generic server rabbit_disk_monitor terminating[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> ** Last message in was update[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> ** When Server state == {state,"/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh",[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>                                50000000,108101758976,100,10000,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>                                #Ref<0.3520763723.2403074049.28520>,false,true,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>                                10,120000}[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> ** Reason for termination ==[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> ** {function_clause,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>        [{lists,reverse,[{error,timeout}],[{file,"lists.erl"},{line,147}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {string,tokens,2,[{file,"string.erl"},{line,1934}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {rabbit_disk_monitor,parse_free_unix,1,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>             [{file,"rabbit_disk_monitor.erl"},{line,259}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {rabbit_disk_monitor,internal_update,1,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>             [{file,"rabbit_disk_monitor.erl"},{line,216}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {rabbit_disk_monitor,handle_info,2,[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>             [{file,"rabbit_disk_monitor.erl"},{line,166}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,695}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,771}]},[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0>         {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}[0m
+[38;5;160m2022-06-13 04:37:38.984066+00:00 [error] <0.290.0> [0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>   crasher:[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     initial call: rabbit_disk_monitor:init/1[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     pid: <0.290.0>[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     registered_name: rabbit_disk_monitor[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     exception error: no function clause matching[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>                      lists:reverse({error,timeout}) (lists.erl, line 147)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in function  string:tokens/2 (string.erl, line 1934)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in call from rabbit_disk_monitor:parse_free_unix/1 (rabbit_disk_monitor.erl, line 259)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in call from rabbit_disk_monitor:internal_update/1 (rabbit_disk_monitor.erl, line 216)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in call from rabbit_disk_monitor:handle_info/2 (rabbit_disk_monitor.erl, line 166)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in call from gen_server:try_dispatch/4 (gen_server.erl, line 695)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>       in call from gen_server:handle_msg/6 (gen_server.erl, line 771)[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     ancestors: [rabbit_disk_monitor_sup,rabbit_sup,<0.221.0>][0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     message_queue_len: 0[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     messages: [][0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     links: [<0.289.0>][0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     dictionary: [][0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     trap_exit: false[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     status: running[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     heap_size: 6772[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     stack_size: 29[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>     reductions: 1076694[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0>   neighbours:[0m
+[38;5;160m2022-06-13 04:37:39.166574+00:00 [error] <0.290.0> [0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>     supervisor: {local,rabbit_disk_monitor_sup}[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>     errorContext: child_terminated[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>     reason: {function_clause,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                 [{lists,reverse,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{error,timeout}],[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"lists.erl"},{line,147}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {string,tokens,2,[{file,"string.erl"},{line,1934}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {rabbit_disk_monitor,parse_free_unix,1,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"rabbit_disk_monitor.erl"},{line,259}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {rabbit_disk_monitor,internal_update,1,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"rabbit_disk_monitor.erl"},{line,216}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {rabbit_disk_monitor,handle_info,2,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"rabbit_disk_monitor.erl"},{line,166}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {gen_server,try_dispatch,4,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"gen_server.erl"},{line,695}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {gen_server,handle_msg,6,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"gen_server.erl"},{line,771}]},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                  {proc_lib,init_p_do_apply,3,[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                      [{file,"proc_lib.erl"},{line,226}]}]}[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>     offender: [{pid,<0.290.0>},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                {id,rabbit_disk_monitor},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                {mfargs,{rabbit_disk_monitor,start_link,[50000000]}},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                {restart_type,{transient,1}},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                {shutdown,300000},[0m
+[38;5;160m2022-06-13 04:37:39.685120+00:00 [error] <0.289.0>                {child_type,worker}][0m
+[38;5;160m2022-06-13 04:37:52.620850+00:00 [error] <0.3005.0> Command timed out: '/usr/bin/df -kP /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-68fb9b645c-kx7zh'[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0> Free disk space monitor encountered an error (e.g. failed to parse output from OS tools): {{'EXIT',[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                             {function_clause,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                              [{lists,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                reverse,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{error,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  timeout}],[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "lists.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  147}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {string,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                tokens,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                2,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "string.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  1934}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {rabbit_disk_monitor,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                parse_free_unix,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                1,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "rabbit_disk_monitor.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  259}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {rabbit_disk_monitor,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                enable,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                1,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "rabbit_disk_monitor.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  351}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {rabbit_disk_monitor,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                init,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                1,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "rabbit_disk_monitor.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  129}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {gen_server,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                init_it,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                2,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "gen_server.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  423}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {gen_server,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                init_it,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                6,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "gen_server.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  390}]},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                               {proc_lib,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                init_p_do_apply,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                3,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                [{file,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  "proc_lib.erl"},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                 {line,[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                                  226}]}]}},[0m
+2022-06-13 04:37:53.307022+00:00 [info] <0.3005.0>                                                                                            23105781760}, retries left: 10[0m
+2022-06-13 04:39:25.686945+00:00 [info] <0.3031.0> accepting AMQP connection <0.3031.0> (127.0.0.6:33955 -> 10.244.0.36:5672)[0m
+2022-06-13 04:39:26.273407+00:00 [info] <0.3031.0> connection <0.3031.0> (127.0.0.6:33955 -> 10.244.0.36:5672) has a client-provided name: rabbitConnectionFactory#3e35fdef:0[0m
+2022-06-13 04:39:26.289417+00:00 [info] <0.3031.0> connection <0.3031.0> (127.0.0.6:33955 -> 10.244.0.36:5672 - rabbitConnectionFactory#3e35fdef:0): user 'guest' authenticated and granted access to vhost '/'[0m
+2022-06-13 04:39:52.376354+00:00 [info] <0.3005.0> Enabling free disk space monitoring[0m
+2022-06-13 04:39:52.376552+00:00 [info] <0.3005.0> Disk free limit set to 50MB[0m

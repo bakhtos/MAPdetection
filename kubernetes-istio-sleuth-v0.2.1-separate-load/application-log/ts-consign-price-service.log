@@ -1,0 +1,569 @@
+10:24:19.714 [main] INFO consignprice.ConsignPriceApplication - Mon Jun 13 10:24:19 CST 2022
+2022-06-13 10:24:28.947  INFO [bootstrap,,,] 1 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@64a294a6: startup date [Mon Jun 13 10:24:28 CST 2022]; root of context hierarchy
+2022-06-13 10:24:33.910  INFO [bootstrap,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3c5b44cd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.22.RELEASE)
+
+2022-06-13 10:24:41.510  INFO [ts-consign-price-service,,,] 1 --- [           main] consignprice.ConsignPriceApplication     : No active profile set, falling back to default profiles: default
+2022-06-13 10:24:41.908  INFO [ts-consign-price-service,,,] 1 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@59fa1d9b: startup date [Mon Jun 13 10:24:41 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@64a294a6
+2022-06-13 10:24:52.564  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-06-13 10:24:57.873  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9584ced9-76c4-3ce9-aaff-e13812706d9b
+2022-06-13 10:24:58.019  INFO [ts-consign-price-service,,,] 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-06-13 10:24:58.053  INFO [ts-consign-price-service,,,] 1 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2022-06-13 10:24:58.814  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$5d82df93] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:00.408  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration' of type [org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration$$EnhancerBySpringCGLIB$$22a68802] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:02.939  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'sleuthAdvisorConfig' of type [org.springframework.cloud.sleuth.annotation.SleuthAdvisorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:03.227  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$b8ef0a0a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:03.356  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:03.478  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@928763c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:03.499  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$ddc3acbc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:03.628  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:04.312  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:04.554  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:05.684  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3c5b44cd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:06.269  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$$EnhancerBySpringCGLIB$$824edef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:06.523  INFO [ts-consign-price-service,,,] 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$$EnhancerBySpringCGLIB$$ccd40d4f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-06-13 10:25:14.564  INFO [ts-consign-price-service,,,] 1 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 16110 (http)
+2022-06-13 10:25:15.743  INFO [ts-consign-price-service,,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-13 10:25:15.743  INFO [ts-consign-price-service,,,] 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.43
+2022-06-13 10:25:21.857  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-13 10:25:21.863  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 39955 ms
+2022-06-13 10:25:33.177  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2022-06-13 10:25:33.178  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-06-13 10:25:33.179  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'traceFilter' to: [/*]
+2022-06-13 10:25:33.179  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-06-13 10:25:33.179  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2022-06-13 10:25:33.179  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2022-06-13 10:25:33.181  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2022-06-13 10:25:33.181  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2022-06-13 10:25:33.181  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2022-06-13 10:25:33.200  INFO [ts-consign-price-service,,,] 1 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2022-06-13 10:25:39.330  INFO [ts-consign-price-service,,,] 1 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[ts-consign-price-mongo:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2022-06-13 10:25:39.382  INFO [ts-consign-price-service,,,] 1 --- [           main] org.mongodb.driver.cluster               : Adding discovered server ts-consign-price-mongo:27017 to client view of cluster
+2022-06-13 10:25:41.349  INFO [ts-consign-price-service,,,] 1 --- [ice-mongo:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:1}] to ts-consign-price-mongo:27017
+2022-06-13 10:25:41.385  INFO [ts-consign-price-service,,,] 1 --- [ice-mongo:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ts-consign-price-mongo:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[5, 0, 9]}, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, roundTripTimeNanos=34513775}
+2022-06-13 10:25:41.560  INFO [ts-consign-price-service,,,] 1 --- [ice-mongo:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2022-06-13 10:26:33.482  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/consignpriceservice/consignprice/price],methods=[GET]}" onto public org.springframework.http.HttpEntity consignprice.controller.ConsignPriceController.getPriceInfo(org.springframework.http.HttpHeaders)
+2022-06-13 10:26:33.570  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/consignpriceservice/consignprice/{weight}/{isWithinRegion}],methods=[GET]}" onto public org.springframework.http.HttpEntity consignprice.controller.ConsignPriceController.getPriceByWeightAndRegion(java.lang.String,java.lang.String,org.springframework.http.HttpHeaders)
+2022-06-13 10:26:33.571  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/consignpriceservice/consignprice/config],methods=[GET]}" onto public org.springframework.http.HttpEntity consignprice.controller.ConsignPriceController.getPriceConfig(org.springframework.http.HttpHeaders)
+2022-06-13 10:26:33.571  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/consignpriceservice/consignprice],methods=[POST]}" onto public org.springframework.http.HttpEntity consignprice.controller.ConsignPriceController.modifyPriceConfig(consignprice.entity.ConsignPrice,org.springframework.http.HttpHeaders)
+2022-06-13 10:26:33.572  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/v1/consignpriceservice/welcome],methods=[GET]}" onto public java.lang.String consignprice.controller.ConsignPriceController.home(org.springframework.http.HttpHeaders)
+2022-06-13 10:26:33.573  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2022-06-13 10:26:33.898  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2022-06-13 10:26:33.941  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2022-06-13 10:26:34.122  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2022-06-13 10:26:35.109  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2022-06-13 10:26:35.112  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2022-06-13 10:26:54.141  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.165  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.184  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2022-06-13 10:26:54.186  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.255  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2022-06-13 10:26:54.255  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.283  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2022-06-13 10:26:54.294  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.411  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.439  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2022-06-13 10:26:54.455  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2022-06-13 10:26:54.488  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.512  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2022-06-13 10:26:54.512  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2022-06-13 10:26:54.529  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.552  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.556  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.599  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2022-06-13 10:26:54.622  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2022-06-13 10:26:54.623  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2022-06-13 10:26:54.640  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2022-06-13 10:27:09.370  INFO [ts-consign-price-service,,,] 1 --- [           main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: 039635fe-3d8d-4bea-81bd-33482dc81932
+
+2022-06-13 10:27:16.172  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@346a361, org.springframework.security.web.context.SecurityContextPersistenceFilter@162be91c, org.springframework.security.web.header.HeaderWriterFilter@1991f767, org.springframework.security.web.authentication.logout.LogoutFilter@31e3250d, edu.fudan.common.security.jwt.JWTFilter@107ed6fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c9f0a20, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7db82169, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1643d68f, org.springframework.security.web.session.SessionManagementFilter@4c6daf0, org.springframework.security.web.access.ExceptionTranslationFilter@6e4de19b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d0b5baf]
+2022-06-13 10:27:20.706  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-06-13 10:27:20.706  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-06-13 10:27:21.533  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2022-06-13 10:27:22.057  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.boot.actuate.autoconfigure.ManagementWebSecurityAutoConfiguration$LazyEndpointPathRequestMatcher@1d1f7216, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@423e4cbb, org.springframework.security.web.context.SecurityContextPersistenceFilter@3efe7086, org.springframework.security.web.header.HeaderWriterFilter@28276e50, org.springframework.web.filter.CorsFilter@6e16b8b5, org.springframework.security.web.authentication.logout.LogoutFilter@2ed3b1f5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3a320ade, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@675d8c96, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@741b3bc3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43b4fe19, org.springframework.security.web.session.SessionManagementFilter@62e70ea3, org.springframework.security.web.access.ExceptionTranslationFilter@7a7471ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b58ed3c]
+2022-06-13 10:27:47.389  INFO [ts-consign-price-service,,,] 1 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@59fa1d9b: startup date [Mon Jun 13 10:24:41 CST 2022]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@64a294a6
+2022-06-13 10:28:05.024  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2022-06-13 10:28:25.242  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 
+2022-06-13 10:28:35.125  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2022-06-13 10:28:35.529  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2022-06-13 10:28:35.585  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2022-06-13 10:28:35.625  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2022-06-13 10:28:35.671  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2022-06-13 10:28:35.763  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2022-06-13 10:28:35.914  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2022-06-13 10:28:35.932  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=59fa1d9b,type=ConfigurationPropertiesRebinder]
+2022-06-13 10:28:36.069  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2022-06-13 10:28:58.910  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2022-06-13 10:28:59.204  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-06-13 10:28:59.204  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'ts-consign-price-service:16110.errorChannel' has 1 subscriber(s).
+2022-06-13 10:28:59.204  INFO [ts-consign-price-service,,,] 1 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2022-06-13 10:29:00.125  INFO [ts-consign-price-service,,,] 1 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-06-13 10:29:00.961  INFO [ts-consign-price-service,,,] 1 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-06-13 10:29:01.130  INFO [ts-consign-price-service,,,] 1 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-06-13 10:29:04.943  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByPrincipalAndAfterAndTypeUsingGET_1
+2022-06-13 10:29:09.487  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_1
+2022-06-13 10:29:09.542  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_2
+2022-06-13 10:29:09.656  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_3
+2022-06-13 10:29:09.783  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_4
+2022-06-13 10:29:09.871  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_5
+2022-06-13 10:29:09.872  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_6
+2022-06-13 10:29:09.873  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_7
+2022-06-13 10:29:09.915  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_8
+2022-06-13 10:29:09.987  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_9
+2022-06-13 10:29:10.026  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_10
+2022-06-13 10:29:10.053  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_11
+2022-06-13 10:29:10.122  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_12
+2022-06-13 10:29:10.123  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_13
+2022-06-13 10:29:10.288  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_14
+2022-06-13 10:29:10.289  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_15
+2022-06-13 10:29:10.718  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_16
+2022-06-13 10:29:10.796  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_17
+2022-06-13 10:29:11.132  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingPOST_1
+2022-06-13 10:29:11.501  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_18
+2022-06-13 10:29:11.728  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_19
+2022-06-13 10:29:11.783  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_20
+2022-06-13 10:29:11.874  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_21
+2022-06-13 10:29:12.018  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_22
+2022-06-13 10:29:12.174  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_23
+2022-06-13 10:29:12.522  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_24
+2022-06-13 10:29:12.642  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: invokeUsingGET_25
+2022-06-13 10:29:12.750  INFO [ts-consign-price-service,,,] 1 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: valueUsingGET_1
+2022-06-13 10:29:15.666  INFO [ts-consign-price-service,,,] 1 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 16110 (http)
+2022-06-13 10:29:15.702  INFO [ts-consign-price-service,,,] 1 --- [           main] consignprice.init.InitData               : [Consign price service] [Init data operation]
+2022-06-13 10:29:15.703  INFO [ts-consign-price-service,,,] 1 --- [           main] c.service.ConsignPriceServiceImpl        : [Create New Price Config]
+2022-06-13 10:29:18.860  INFO [ts-consign-price-service,,,] 1 --- [           main] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:2}] to ts-consign-price-mongo:27017
+2022-06-13 10:29:22.116  INFO [ts-consign-price-service,,,] 1 --- [           main] consignprice.ConsignPriceApplication     : Started ConsignPriceApplication in 299.96 seconds (JVM running for 305.029)
+2022-06-13 12:48:07.899  INFO [ts-consign-price-service,,,] 1 --- [io-16110-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2022-06-13 12:48:07.901  INFO [ts-consign-price-service,,,] 1 --- [io-16110-exec-6] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2022-06-13 12:48:09.488  INFO [ts-consign-price-service,,,] 1 --- [io-16110-exec-6] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 1586 ms
+2022-06-13 12:48:15.387  INFO [ts-consign-price-service,009c54e8a89201220e38564551bffb9c,a9f79800e205afe9,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:15.403  WARN [ts-consign-price-service,009c54e8a89201220e38564551bffb9c,a9f79800e205afe9,true] 1 --- [io-16110-exec-6] org.mongodb.driver.connection            : Got socket exception on connection [connectionId{localValue:2, serverValue:2}] to ts-consign-price-mongo:27017. All connections to ts-consign-price-mongo:27017 will be closed.
+2022-06-13 12:48:15.405  INFO [ts-consign-price-service,009c54e8a89201220e38564551bffb9c,a9f79800e205afe9,true] 1 --- [io-16110-exec-6] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:2}] to ts-consign-price-mongo:27017 because there was a socket exception raised by this connection.
+2022-06-13 12:48:15.809 ERROR [ts-consign-price-service,009c54e8a89201220e38564551bffb9c,a9f79800e205afe9,true] 1 --- [io-16110-exec-6] o.s.c.sleuth.instrument.web.TraceFilter  : Uncaught exception thrown
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.data.mongodb.UncategorizedMongoDbException: Prematurely reached end of stream; nested exception is com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:982) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:54) ~[spring-boot-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:111) ~[spring-boot-actuator-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at edu.fudan.common.security.jwt.JWTFilter.doFilterInternal(JWTFilter.java:27) ~[ts-common-0.1.0.jar!/:0.1.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.cloud.sleuth.instrument.web.TraceFilter.doFilter(TraceFilter.java:164) ~[spring-cloud-sleuth-core-1.3.0.RELEASE.jar!/:1.3.0.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:100) [spring-boot-actuator-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+Caused by: org.springframework.data.mongodb.UncategorizedMongoDbException: Prematurely reached end of stream; nested exception is com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at org.springframework.data.mongodb.core.MongoExceptionTranslator.translateExceptionIfPossible(MongoExceptionTranslator.java:107) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.potentiallyConvertRuntimeException(MongoTemplate.java:2146) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.executeFindMultiInternal(MongoTemplate.java:1981) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.doFind(MongoTemplate.java:1787) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.doFind(MongoTemplate.java:1770) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.find(MongoTemplate.java:644) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.findOne(MongoTemplate.java:609) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$SingleEntityExecution.execute(MongoQueryExecution.java:173) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingExecution.execute(MongoQueryExecution.java:411) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:94) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at com.sun.proxy.$Proxy105.findByIndex(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at com.sun.proxy.$Proxy105.findByIndex(Unknown Source) ~[na:na]
+	at consignprice.service.ConsignPriceServiceImpl.getPriceByWeightAndRegion(ConsignPriceServiceImpl.java:27) ~[classes!/:1.0]
+	at consignprice.controller.ConsignPriceController.getPriceByWeightAndRegion(ConsignPriceController.java:35) ~[classes!/:1.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	... 89 common frames omitted
+Caused by: com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:88) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:494) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:224) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.UsageTrackingInternalConnection.receiveMessage(UsageTrackingInternalConnection.java:96) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultConnectionPool$PooledConnection.receiveMessage(DefaultConnectionPool.java:440) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.CommandProtocol.execute(CommandProtocol.java:112) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:168) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:289) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServerConnection.command(DefaultServerConnection.java:176) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:216) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:207) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:113) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation$1.call(FindOperation.java:516) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation$1.call(FindOperation.java:510) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:435) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:408) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:510) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:81) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.Mongo.execute(Mongo.java:836) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.Mongo$2.execute(Mongo.java:823) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.DBCursor.initializeCursor(DBCursor.java:870) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.DBCursor.hasNext(DBCursor.java:142) ~[mongodb-driver-3.4.3.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.executeFindMultiInternal(MongoTemplate.java:1967) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	... 133 common frames omitted
+
+2022-06-13 12:48:15.901 ERROR [ts-consign-price-service,,,] 1 --- [io-16110-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.mongodb.UncategorizedMongoDbException: Prematurely reached end of stream; nested exception is com.mongodb.MongoSocketReadException: Prematurely reached end of stream] with root cause
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:88) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:494) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:224) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.UsageTrackingInternalConnection.receiveMessage(UsageTrackingInternalConnection.java:96) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultConnectionPool$PooledConnection.receiveMessage(DefaultConnectionPool.java:440) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.CommandProtocol.execute(CommandProtocol.java:112) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:168) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:289) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.connection.DefaultServerConnection.command(DefaultServerConnection.java:176) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:216) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:207) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.CommandOperationHelper.executeWrappedCommandProtocol(CommandOperationHelper.java:113) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation$1.call(FindOperation.java:516) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation$1.call(FindOperation.java:510) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:435) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:408) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:510) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:81) ~[mongodb-driver-core-3.4.3.jar!/:na]
+	at com.mongodb.Mongo.execute(Mongo.java:836) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.Mongo$2.execute(Mongo.java:823) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.DBCursor.initializeCursor(DBCursor.java:870) ~[mongodb-driver-3.4.3.jar!/:na]
+	at com.mongodb.DBCursor.hasNext(DBCursor.java:142) ~[mongodb-driver-3.4.3.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.executeFindMultiInternal(MongoTemplate.java:1967) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.doFind(MongoTemplate.java:1787) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.doFind(MongoTemplate.java:1770) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.find(MongoTemplate.java:644) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.core.MongoTemplate.findOne(MongoTemplate.java:609) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$SingleEntityExecution.execute(MongoQueryExecution.java:173) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.MongoQueryExecution$ResultProcessingExecution.execute(MongoQueryExecution.java:411) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.mongodb.repository.query.AbstractMongoQuery.execute(AbstractMongoQuery.java:94) ~[spring-data-mongodb-1.10.8.RELEASE.jar!/:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:483) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:461) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:56) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.8.RELEASE.jar!/:na]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at com.sun.proxy.$Proxy105.findByIndex(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at com.sun.proxy.$Proxy105.findByIndex(Unknown Source) ~[na:na]
+	at consignprice.service.ConsignPriceServiceImpl.getPriceByWeightAndRegion(ConsignPriceServiceImpl.java:27) ~[classes!/:1.0]
+	at consignprice.controller.ConsignPriceController.getPriceByWeightAndRegion(ConsignPriceController.java:35) ~[classes!/:1.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_111]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_111]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_111]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_111]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:54) ~[spring-boot-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:111) ~[spring-boot-actuator-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at edu.fudan.common.security.jwt.JWTFilter.doFilterInternal(JWTFilter.java:27) ~[ts-common-0.1.0.jar!/:0.1.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.2.3.RELEASE.jar!/:4.2.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.cloud.sleuth.instrument.web.TraceFilter.doFilter(TraceFilter.java:164) ~[spring-cloud-sleuth-core-1.3.0.RELEASE.jar!/:1.3.0.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:100) ~[spring-boot-actuator-1.5.22.RELEASE.jar!/:1.5.22.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar!/:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:808) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.43.jar!/:8.5.43]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+
+2022-06-13 12:48:22.289  INFO [ts-consign-price-service,3acd43c47dbcf565c8ab56295160fa86,0691d109acc107d4,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:22.383  INFO [ts-consign-price-service,3acd43c47dbcf565c8ab56295160fa86,0691d109acc107d4,true] 1 --- [io-16110-exec-8] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:3}] to ts-consign-price-mongo:27017
+2022-06-13 12:48:28.929  INFO [ts-consign-price-service,bc7b545bb167c063101d5a86dd38e701,a6831098d90cd2e2,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:33.694  INFO [ts-consign-price-service,1aea224481d5422fe0e2c4b0613fc9d6,44f568fa98f6e937,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:38.385  INFO [ts-consign-price-service,38a7a0e54d1e42cf3f6ec80a1f2aa747,3a7baee09e832612,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:42.522  INFO [ts-consign-price-service,1ccea514e06a915bb4d54f83b191d38d,18c63c059de59373,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:46.682  INFO [ts-consign-price-service,a4f1171de766a5081f266f10f8c79beb,fc4762574a986e98,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:50.192  INFO [ts-consign-price-service,b1ee2fa9c1ab5eee5b4ace895580a700,8179a465cac2fb2f,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:53.791  INFO [ts-consign-price-service,8faf3a5097e14564c24360e84aff8f77,1f832f8fe21a0324,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:48:57.880  INFO [ts-consign-price-service,8bc3dfe86648ecc9f716a820cb129ffa,760a7e7c2e574b69,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:02.280  INFO [ts-consign-price-service,f16e83b98d5bc5b46a544d1100b5a2b9,5239ec6bf5805cbb,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:05.658  INFO [ts-consign-price-service,c284ef67c2b01b04a6cbc010222054df,11b070927ffa392e,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:09.259  INFO [ts-consign-price-service,2cf061358cc88d90362c6e3ef720280e,de37ba39cea3a75d,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:12.865  INFO [ts-consign-price-service,811d2de1c6c5b8dafc0675207a945e81,0b7a1a9a54b38428,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:17.375  INFO [ts-consign-price-service,eb606faacaf251b93cc68285e51117cf,3c977631e2ebe383,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:21.985  INFO [ts-consign-price-service,9a41f235fcda249d5dc65b46b2c88ecf,e50909c60212ca2f,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:26.561  INFO [ts-consign-price-service,5a445cc2a49a7a53eb5b162f72545bd0,1102eae7b5195b2d,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:30.662  INFO [ts-consign-price-service,54b15dca979593cd05c2313c51e82456,9186aefa20834f23,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:35.245  INFO [ts-consign-price-service,dbaa4de5a637ef3747fe567cf152a4ac,d303f1cc7a0366ea,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:40.338  INFO [ts-consign-price-service,64ce09547d20b783934d778982f4f26a,0811c211042325a0,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:45.646  INFO [ts-consign-price-service,12390f676690bf5d2002b35bc4d6b960,3944aea9b86f086c,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:51.650  INFO [ts-consign-price-service,2803394d48cd2eb2312a10c947f89710,95f606a56a2baade,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:49:57.362  INFO [ts-consign-price-service,f9a371dc0e345bd5205a117a4c3f7c53,acaf14d13ddebf1b,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:02.373  INFO [ts-consign-price-service,9a51797f79a79f28baa9e0ccf75f359c,c66cc97afd2f5069,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:06.726  INFO [ts-consign-price-service,05c02466bf365f83bfd95d66c362cd0b,1d737a6d567d6ca0,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:11.529  INFO [ts-consign-price-service,9f72daacc43e57a9995190a64fcb3cfa,4b9cd0199f602631,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:15.787  INFO [ts-consign-price-service,d637cc8ad9d78795a86c6eb4cc86ffac,99bcdfc9d2fc2c3f,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:20.670  INFO [ts-consign-price-service,eaaec0a6d4a02b96d0b9ff9c362cff23,e579535a764bf88b,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:25.712  INFO [ts-consign-price-service,6f681ace10d96ea66fadb6712c135498,9b292d0d2333a929,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:32.614  INFO [ts-consign-price-service,5524bbb56ed6bb293b7f7d09861dd2b7,8ba4edbf4d19cb29,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:37.027  INFO [ts-consign-price-service,9843719f69890227b2a7e446ee42fa48,2aa021dbf72640e2,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:41.617  INFO [ts-consign-price-service,3e8c74576d6ea88c530a239448a8baf3,560f7ce761ba510a,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:47.312  INFO [ts-consign-price-service,93f57407b73c0607eced56ce11fb1e25,7ad185f87729bcb2,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:50.967  INFO [ts-consign-price-service,8278ee792fe02f6b742cb18f469e18aa,fd7a7b360a1f6b11,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:55.716  INFO [ts-consign-price-service,8a3f15818c0cd56423212622ce448615,332914d016110d22,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:50:59.950  INFO [ts-consign-price-service,43bf53ff315329c736b997035fdc31e5,009d5f367c0dbce0,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:04.049  INFO [ts-consign-price-service,4b23e02a6df949b2b6a9d0ba6ae0e524,7b95cdc85f3147fd,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:07.489  INFO [ts-consign-price-service,03e7a834fd840d12b6d6177941b4714f,8f063e48d2f2e6d0,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:11.780  INFO [ts-consign-price-service,33bac52662e9cfa2987fc6dca26b04b3,743f411ad1c8d511,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:16.670  INFO [ts-consign-price-service,526739683e31072e18cd443e1a2b5c6c,b811f0e17653f89e,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:21.297  INFO [ts-consign-price-service,e59074139f8f59675dd8251a5f7e5f08,03d81544088203a3,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:27.688  INFO [ts-consign-price-service,dc36f1d0eee33270ed57af2b07895765,7cc8b540c2ff46f0,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:34.371  INFO [ts-consign-price-service,d972dec3fd351e6c4304973f72e1d259,ecd367750935dbc0,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:42.159  INFO [ts-consign-price-service,72557320965be6d5818c9428ea410806,2c207b1797513432,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:49.265  INFO [ts-consign-price-service,b7dec28a4d27a6722afa1b60ff5d560b,90efe29316e2f69e,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:51:54.855  INFO [ts-consign-price-service,d918cd58f5189717b211834e2d44b8ef,b780c262ee6cda36,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:00.693  INFO [ts-consign-price-service,4d9d6d8d33b67110dceab9a844751dd9,eb12bdb5ac001280,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:06.642  INFO [ts-consign-price-service,ae3e5d27021abac4e1e42141f50b3558,a4896d9371ea6235,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:11.937  INFO [ts-consign-price-service,6498a386f9d5bd7bc0117e4e5fc956ed,56f78db4f883f0b9,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:24.457  INFO [ts-consign-price-service,5188306d67380af136cc863ef49b7286,ed38df87d910d16a,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:33.694  INFO [ts-consign-price-service,c757b927874071c1fc9afdb407bcec21,990baddcdd7d58a6,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:52:43.894  INFO [ts-consign-price-service,1a27c40a778dcf7baf7d54618278ed58,868ead834f8b3346,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:53:39.341  INFO [ts-consign-price-service,665d381d75665c44ebca8298c58728ea,ebd2e0efd9f391e9,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:53:49.970  INFO [ts-consign-price-service,cefc7bd69d0bd05ba60af42a4abed16a,9866d838e264df23,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:53:54.093  INFO [ts-consign-price-service,5710c39b0f9896bc86f9d65099ca9186,a70e71dccf9af005,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:53:59.406  INFO [ts-consign-price-service,b78f9c7863751b3437084df983156136,319e460b901dbcd8,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:04.254  INFO [ts-consign-price-service,8f008a90276fea74d289282d5161e62d,8158e2c14124fb35,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:11.241  INFO [ts-consign-price-service,de5b71c52d8013ce1513f01dc685b47c,76c1910fa91d8db8,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:17.247  INFO [ts-consign-price-service,41038fcec5b4a377558c9e91dbe371be,544326856d688c89,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:22.894  INFO [ts-consign-price-service,16d362a8e04566c458f23b051f3b864e,1e05f6190959278c,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:28.883  INFO [ts-consign-price-service,4659e7d719fe6bf501c35854fc629a9e,72a67e1fcc5cf21d,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:35.837  INFO [ts-consign-price-service,cb32f0c5242eda44ed836629c0aea423,75e1ecb8fad3babb,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:54:53.624  INFO [ts-consign-price-service,007c575e8328020cd3185cc4440df6ff,18010b1ad80348c0,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:17.317  INFO [ts-consign-price-service,1931cd4ce5a5dd74e50355da8044b7f1,77b98ed06b69c727,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:24.819  INFO [ts-consign-price-service,76bcee0915aa95145dbdb9c69b3c3b45,1be7a86e9f3814a1,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:29.167  INFO [ts-consign-price-service,c1398c7126f715a1d23704ee20e252cb,8ad6993fc6039bd5,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:33.698  INFO [ts-consign-price-service,7fbd256adb4a8e35e9f97f4a9121f306,ea4b824e9f61971c,true] 1 --- [io-16110-exec-6] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:37.419  INFO [ts-consign-price-service,5ebda6a369cb4ca673a6ca394f3d0cd4,3dc11d47cf954c8f,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:41.391  INFO [ts-consign-price-service,83a08d9705681a2635df61d10e0941ae,9e8da84d29f9f81d,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:44.481  INFO [ts-consign-price-service,763727881e8d2836d1b3cdb4ae41839a,132567a7893f467c,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:47.631  INFO [ts-consign-price-service,900f36794b0c2ef4d2399aecd806e02b,e01e9cc1b6fecea8,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:50.440  INFO [ts-consign-price-service,36b8e6805c2116d6c61f7cbd6d679ffe,d326b4267dcec0dc,true] 1 --- [io-16110-exec-2] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:53.468  INFO [ts-consign-price-service,16843ec6603f3f76632343d481982f64,2c5009adc689723b,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:56.444  INFO [ts-consign-price-service,5e1c083c1236cee7382f63051a5c0c12,a49407820e896fa6,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:55:59.763  INFO [ts-consign-price-service,f116af1a09556eeba0e04a98463ab0e8,13b7faca6a4da597,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:03.312  INFO [ts-consign-price-service,55f082da2b8792a526c220516d907fa0,0d369d1b13cbfa99,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:06.585  INFO [ts-consign-price-service,8438fa26ad35b705a466c9e679bbc428,c9121c55d2123f5a,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:10.744  INFO [ts-consign-price-service,c2c1a84449c5496218197ca7ffaf4ccb,3d6c7f720ddfc958,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:15.097  INFO [ts-consign-price-service,3d07cd417d68464d15f4ab7207e2fc5a,871c9640334ce376,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:20.260  INFO [ts-consign-price-service,7358f318588e1d09c8e5b7c9f3e7f0bf,322754d4a7aad5ae,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:26.467  INFO [ts-consign-price-service,b3664b55c1a94321e729abd5da0e9c81,333ba1f58573ab3d,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:32.882  INFO [ts-consign-price-service,7b194202ba46516c4c1e8f073ceb976d,4abe5a84bd2451fe,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:39.305  INFO [ts-consign-price-service,884eaf326175d8d674f2e5d99fd7874d,3aea21d0010c8059,true] 1 --- [io-16110-exec-9] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:45.983  INFO [ts-consign-price-service,99348efd43560674ed8a9bb9050eb783,1a2e43a042a412aa,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:52.359  INFO [ts-consign-price-service,8428e0b6e0e60377a2185820e6e4d5e8,7af7bcbdc56edde0,true] 1 --- [io-16110-exec-4] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:56:58.778  INFO [ts-consign-price-service,37f1f24e9a4c04b54db61ad6546fe356,34d8249947532d67,true] 1 --- [io-16110-exec-5] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:57:05.182  INFO [ts-consign-price-service,5f88c63ac0c1856dae44ec3b3d2d9ca6,50d4e5972b0512cb,true] 1 --- [io-16110-exec-7] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:57:11.920  INFO [ts-consign-price-service,2393dba508e5f74f89c218da02570a2a,a2126adb471ff972,true] 1 --- [o-16110-exec-10] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:57:17.410  INFO [ts-consign-price-service,f5bdcb3a5d8d05844f4334e2f5221855,5aeb5c9fe0893958,true] 1 --- [io-16110-exec-8] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:57:22.622  INFO [ts-consign-price-service,21cbe3375f90a017327ae93d8e09aa46,c7d2dfbf03df0aa9,true] 1 --- [io-16110-exec-1] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
+2022-06-13 12:57:26.574  INFO [ts-consign-price-service,6ed1d0dbd8fadfed38f663a59e9cf785,bd98504ac8759679,true] 1 --- [io-16110-exec-3] c.controller.ConsignPriceController      : Get price by weight: 1.0, regin: false
