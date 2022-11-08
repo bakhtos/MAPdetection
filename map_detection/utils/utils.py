@@ -99,7 +99,7 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
                         break
                 if user_instance is None: continue
 
-                # Insert user [instance] in all necessary datastructures
+                # Insert user[_instance] in all necessary datastructures
                 call_counters.setdefault(user, Counter())
                 call_counters.setdefault(user_instance, Counter())
                 pipelines.setdefault(user, [])
@@ -115,17 +115,21 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
                     endpoint = endpoint.split('/')
                     endpoint = '/'.join(endpoint[0:5])
 
-                    call_counters[user][(from_service, to_service, endpoint)] += 1
-                    call_counters[user_instance][(from_service, to_service, endpoint)] += 1
-                    pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
-                    pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
+                    call_counters[user][(from_service, to_service,
+                                         endpoint)] += 1
+                    call_counters[user_instance][(from_service,
+                                                  to_service, endpoint)] += 1
+                    pipelines[user].append((start_time.isoformat(),
+                                            from_service, to_service, endpoint))
+                    pipelines[user_instance].append((start_time.isoformat(),
+                                                     from_service, to_service,
+                                                     endpoint))
         f.close()
 
     for l in pipelines.values():
         l.sort(key=lambda x: x[0])
 
     return pipelines, call_counters
-
 
 
 def write_pipelines(pipelines):

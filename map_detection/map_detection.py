@@ -1,9 +1,5 @@
 import networkx as nx
 
-import os
-from collections import Counter
-from datetime import datetime, timedelta
-
 from map_detection.utils import *
 
 __all__ = ['generate_call_graphs']
