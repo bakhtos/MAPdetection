@@ -136,12 +136,11 @@ def detect_information_holder_resource(G, database_services=None, user=None):
         is_database = node in database_services
         if zero_degree or is_database:
             if len(preds := D.pred[node]) == 1:
-                pred = [n for n in preds.keys()]
-                pred = pred[0]
+                pred = [n for n in preds.keys()][0]
                 if len(D.succ[pred]) == 1:
                     ihr_candidates.add((pred, node))
-                    print(f"{user}: Information Holder Resource - '{pred}' is a "
-                          f"potential IHR for '{node}'")
+                    print(f"{user}: Information Holder Resource - '{pred}' is a"
+                          f" potential IHR for '{node}'")
                 else:
                     ihr_violators.add((pred, node))
                     print(f"{user}: Information Holder Resouce Violation - "
@@ -150,8 +149,9 @@ def detect_information_holder_resource(G, database_services=None, user=None):
                 database_no_ihr_violators.discard(node)
         if not zero_degree and is_database:
             database_call_violators.add(node)
-            print(f"{user}: Information Holder Resource Violation - '{node}' is designated"
-                  f" as database service but has outgoing calls (out-dergee = {out_degree})")
+            print(f"{user}: Information Holder Resource Violation - '{node}'"
+                  f" is designated as database service but has outgoing calls"
+                  f"({out_degree=})")
 
     for service in database_services:
         print(f"{user}: Information Holder Resource Violation - '{service}' "
