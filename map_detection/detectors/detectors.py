@@ -153,7 +153,7 @@ def detect_information_holder_resource(G, database_services=None, user=None):
                   f" is designated as database service but has outgoing calls"
                   f"({out_degree=})")
 
-    for service in database_services:
+    for service in database_no_ihr_violators:
         print(f"{user}: Information Holder Resource Violation - '{service}' "
               f"is designated as database service but no IHR detected.")
     
