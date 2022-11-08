@@ -23,7 +23,7 @@ def detect_users(directory, time_delta=None):
     user_boundaries : dict[str] ->  tuple(datetime),
         for each user tells the couple of timestamps defining that user's
         beginning and end of activity;
-    instance_boundaries : dict[str] -> dict[str] -> datetime,
+    instance_boundaries : dict[str] -> dict[str] -> tuple[datetime],
         for each user stores the dictionary from user instances' uuids
         to the datetime of that instance's beginning of activity
     """
@@ -69,6 +69,27 @@ def detect_users(directory, time_delta=None):
 
 
 def parse_logs(directory, user_boundaries, instance_boundaries):
+    """Parse tracing logs to get call counts and pipelines.
+
+    Parameters
+    __________
+    directory : str,
+        Directory containing tracing log file for each microservice.
+    user_boundaries : dict[str] -> tuple[datetime],
+        Temporal boundaries of each user as returned by detect_users().
+    instance_boundaries : dict[str] -> dict[str] -> tuple[datetime],
+        Temporal boundaries of each user instance as returned by detect_users().
+
+    Returns
+    _______
+    pipelines : dict[str] -> list[tuple[datetime, str, str, str]],
+        For each user[_instance]  list of tuples containing the datetime of
+        the call, calling service, called service and called endpoint,
+        sorted by the time of call.
+    call_counters : dict[str] -> Counter[tuple[str, str, str]],
+        For each user[_instance] a Counter which counts the amount of times
+        one service calls another service's endpoint.
+    """
 
     pipelines = dict()
     call_counters = dict()
@@ -133,11 +154,12 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
 
 
 def write_pipelines(pipelines):
+    """Write each user[_instance]'s pipeline to a csv file."""
 
     for k, l in pipelines.items():
         p = os.path.join("pipelines", k+"_pipeline.csv")
         os.makedirs("pipelines", exist_ok=True)
-        file = open(p,'w')
+        file = open(p, 'w')
         file.write("ISO_TIME,FROM_SERVICE,TO_SERVICE,ENDPOINT\n")
         for t in l:
             file.write(",".join(t)+"\n")
