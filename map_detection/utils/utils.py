@@ -120,6 +120,8 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
                         break
                 if user_instance is None: continue
 
+                user_instance = user + '_' + user_instance
+                user = user + '_total'
                 # Insert user[_instance] in all necessary datastructures
                 call_counters.setdefault(user, Counter())
                 call_counters.setdefault(user_instance, Counter())
