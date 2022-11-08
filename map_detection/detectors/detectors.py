@@ -70,7 +70,7 @@ def detect_request_bundle(pipeline, threshold_service=2,
     return bundles_service, bundles_endpoint
 
 
-def detect_frontend_integration(G, frontend_services=None, user=None):
+def detect_frontend_integration(G, frontend_services=None, user='NoUser'):
     """Detect the Frontend Integration API pattern.
 
     Frontend services should only have outgoing calls. Two things can be done -
@@ -85,6 +85,8 @@ def detect_frontend_integration(G, frontend_services=None, user=None):
     frontend_services : set[str], optional (default None)
         If given, check that services in this set fulfill the property,
         violating services will be returned in frontend_violators
+    user : str, optional (default 'NoUser')
+        User's name to put in logs
 
     Returns
     _______
@@ -112,7 +114,7 @@ def detect_frontend_integration(G, frontend_services=None, user=None):
             frontend_violators.add(node)
             print(f"{user}: Frontend Integration Violation - service '{node}' "
                   f"is designated as frontend service but has incoming calls "
-                  f"(in-degree = {in_degree})")
+                  f"({in_degree=})")
 
     return frontend_candidates, frontend_violators
 
