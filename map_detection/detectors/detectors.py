@@ -106,7 +106,8 @@ def detect_frontend_integration(G, frontend_services=None, user=None):
         if in_degree == 0:
             if D.out_degree(node) > 0:
                 frontend_candidates.add(node)
-                print(f"{user}: Frontend Integreation - potential frontend service '{node}' found.")
+                print(f"{user}: Frontend Integration - potential frontend "
+                      f" service '{node}' found.")
         elif node in frontend_services:
             frontend_violators.add(node)
             print(f"{user}: Frontend Integration Violation - service '{node}' "
