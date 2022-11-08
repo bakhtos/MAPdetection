@@ -7,25 +7,32 @@ __all__ = ['detect_users', 'parse_logs', 'write_pipelines']
 
 
 def detect_users(directory, time_delta=None):
-    '''Detect all Users appearing in pptam logs.
+    """Detect all Users appearing in locust logs.
     Each user must have an own directory with locust configuration/log.
 
-    :param str directory: A directory which stores all users' configurations
-    :param time_delta: Time difference to add to all parsed timestamps (default: 0)
-    :type time_delta: datetime.timedelta
+    Parameters
+    __________
+    directory : str,
+        A directory which stores all users' configurations and logs
+    time_delta: datetime.timedelta, optional (default None)
+        Time difference to add to all parsed timestamps (if None, defaults to 0
+                                                         delta)
 
-    :return: user_boundaries - for each user tells the couple of timestamps
-             defining that user's begining and end of activity;
-             instance_boundaries - for each user tells the timestamps when a new instance
-             of that user begins activity.
-    :rtype: dict
-    '''
+    Returns
+    _______
+    user_boundaries : dict[str] ->  tuple(datetime),
+        for each user tells the couple of timestamps defining that user's
+        beginning and end of activity;
+    instance_boundaries : dict[str] -> dict[str] -> datetime,
+        for each user stores the dictionary from user instances' uuids
+        to the datetime of that instance's beginning of activity
+    """
 
     # Default time_delta is 0
     if time_delta is None: time_delta = timedelta(0)
 
     def get_time(line):
-        '''Convert locustlog timestamp string to datetime object.'''
+        """Convert locustlog timestamp string to datetime object."""
         return datetime.fromisoformat('.'.join(line[1:24].split(',')))
 
     # Each user is defined by a separate directory
@@ -35,18 +42,21 @@ def detect_users(directory, time_delta=None):
 
     for user in users:
         # Read locustlog of a user
-        pptam_log = os.path.join(directory, user, 'locustfile.log')
-        with open(pptam_log, 'r') as file:
+        locustlog = os.path.join(directory, user, 'locustfile.log')
+        with open(locustlog, 'r') as file:
             lines = file.readlines()
+
         # First and last timestamps in file define the interval when the user was active
         user_boundaries[user] = (get_time(lines[0])+time_delta, get_time(lines[-1])+time_delta)
+
         # Each line with 'Running user' begins a new instance of the particular user
-        l = []
+        user_instance_boundaries = dict()
         for line in lines:
             if "Running user" in line:
-                l.append(get_time(line) + time_delta)
-        instance_boundaries[user] = tuple(l)
-        print(f"{user}: {len(l)} instances detected")
+                user_instance_boundaries[line[-40:-4]] = (get_time(line) +
+                                                          time_delta)
+        instance_boundaries[user] = user_instance_boundaries
+        print(f"{user}: {len(user_instance_boundaries)} instances detected")
 
     return user_boundaries, instance_boundaries
 
