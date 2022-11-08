@@ -91,10 +91,10 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
                         break
 
                 # Insert user [instance] in all necessary datastructures
-                if user not in call_counters: call_counters[user] = Counter()
-                if user_instance not in call_counters: call_counters[user_instance] = Counter()
-                if user not in pipelines: pipelines[user] = []
-                if user_instance not in pipelines: pipelines[user_instance] = []
+                call_counters.setdefault(user, Counter())
+                call_counters.setdefault(user_instance, Counter())
+                pipelines.setdefault(user, [])
+                pipelines.setdefault(user_instance, [])
 
                 # If calling another service, store the call and the pipeline
                 to_service = obj["upstream_cluster"]
