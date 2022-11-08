@@ -69,7 +69,30 @@ def detect_request_bundle(pipeline, threshold_service=2,
 
     return bundles_service, bundles_endpoint
 
+
 def detect_frontend_integration(G, frontend_services=None, user=None):
+    """Detect the Frontend Integration API pattern.
+
+    Frontend services should only have outgoing calls. Two things can be done -
+    services having only outgoing calls can be considered potential front-end
+    services, as well as a given set of frontend services can be checked to
+    fulfill this pattern.
+
+    Parameters
+    __________
+    G : networkx.MultiDiGraph,
+        Graph to be studied (converted to simple DiGraph)
+    frontend_services : set[str], optional (default None)
+        If given, check that services in this set fulfill the property,
+        violating services will be returned in frontend_violators
+
+    Returns
+    _______
+    frontend_candidates : set[str],
+        Services that have only outgoing calls.
+    frontend_violators : set[str],
+        Services from frontend_services that violate the pattern (receive calls)
+    """
 
     if frontend_services is None: frontend_services = set()
     if user is None: user = "NoUser"
