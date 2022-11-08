@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 
 __all__ = ['detect_users', 'parse_logs', 'write_pipelines']
 
+
 def detect_users(directory, time_delta=None):
     '''Detect all Users appearing in pptam logs.
     Each user must have an own directory with locust configuration/log.
@@ -99,6 +100,7 @@ def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_c
                 call_counters[user_instance][(from_service, to_service, endpoint)] += 1
                 pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
                 pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
+    f.close()
 
 
 def write_pipelines(pipelines):
