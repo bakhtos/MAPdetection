@@ -51,10 +51,17 @@ def detect_users(directory, time_delta=None):
 
         # Each line with 'Running user' begins a new instance of the particular user
         user_instance_boundaries = dict()
+        instance = None
         for line in lines:
             if "Running user" in line:
-                user_instance_boundaries[line[-40:-4]] = (get_time(line) +
-                                                          time_delta)
+                t = get_time(line) + time_delta
+                end_time = t
+                if instance is not None:
+                    user_instance_boundaries[instance] = start_time, end_time
+                instance = line[-40:-4]
+                start_time = t
+
+        user_instance_boundaries[instance] = start_time, user_boundaries[user][1]
         instance_boundaries[user] = user_instance_boundaries
         print(f"{user}: {len(user_instance_boundaries)} instances detected")
 
@@ -78,17 +85,19 @@ def parse_logs(directory, user_boundaries, instance_boundaries):
                 start_time = obj["start_time"]
                 start_time = datetime.fromisoformat(start_time[:-1])
 
-                # Find user whose interval of activity captures start_time
+                # Find correct user
                 user = None
-                for user, i in user_boundaries.items():
-                    if i[0] <= start_time < i[1]:
+                for user, boundaries in user_boundaries.items():
+                    if boundaries[0] <= start_time < boundaries[1]:
                         break
                 if user is None: continue
 
-                # Find the particular user instances whose interval of activity captures start_time
-                for user_instance, timestamp in instance_boundaries[user].items():
-                    if timestamp > start_time:
+                # Find the correct user instance
+                user_instance = None
+                for user_instance, boundaries in instance_boundaries[user].items():
+                    if boundaries[0] <= start_time < boundaries[1]:
                         break
+                if user_instance is None: continue
 
                 # Insert user [instance] in all necessary datastructures
                 call_counters.setdefault(user, Counter())
