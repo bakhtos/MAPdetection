@@ -61,56 +61,62 @@ def detect_users(directory, time_delta=None):
     return user_boundaries, instance_boundaries
 
 
-def parse_logs(directory, filename, user_boundaries, instance_boundaries, call_counters, pipelines):
+def parse_logs(directory, user_boundaries, instance_boundaries):
 
-    # Each logfile is named after the service
-    from_service = filename.split('.')[0]
-    # Read log line by line
-    f = open(os.path.join(directory, filename), 'r')
-    for line in f:
-        # Parse lines contaning json bodies
-        if line[0] == '{':
-            obj = json.loads(line)
-            # Get the time of the API call
-            start_time = obj["start_time"]
-            start_time = datetime.fromisoformat(start_time[:-1])
+    pipelines = dict()
+    call_counters = dict()
+    services = os.listdir(directory)
+    for from_service in services:
+        # Read log line by line
+        f = open(os.path.join(directory, from_service), 'r')
+        from_service = from_service.split('.')[0]
+        for line in f:
+            # Parse lines containing json bodies
+            if line[0] == '{':
+                obj = json.loads(line)
+                # Get the time of the API call
+                start_time = obj["start_time"]
+                start_time = datetime.fromisoformat(start_time[:-1])
 
-            # Find user whose interval of activity captures start_time
-            user = None
-            for k, i in user_boundaries.items():
-                if start_time > i[0] and start_time < i[1]:
-                    user = k
-                    break
-            if user is None: continue
+                # Find user whose interval of activity captures start_time
+                user = None
+                for user, i in user_boundaries.items():
+                    if i[0] <= start_time < i[1]:
+                        break
+                if user is None: continue
 
-            # Find the particular user instances whose interval of activity captures start_time
-            user_intervals = instance_boundaries[user]
-            for i in range(len(user_intervals)):
-                if start_time < user_intervals[i]:
-                    user_instance = user +"_"+str(i-1)
-                    break
+                # Find the particular user instances whose interval of activity captures start_time
+                for user_instance, timestamp in instance_boundaries[user].items():
+                    if timestamp > start_time:
+                        break
 
-            # Insert user [instance] in all necessary datastructures
-            if user not in call_counters: call_counters[user] = Counter()
-            if user_instance not in call_counters: call_counters[user_instance] = Counter()
-            if user not in pipelines: pipelines[user] = []
-            if user_instance not in pipelines: pipelines[user_instance] = []
+                # Insert user [instance] in all necessary datastructures
+                if user not in call_counters: call_counters[user] = Counter()
+                if user_instance not in call_counters: call_counters[user_instance] = Counter()
+                if user not in pipelines: pipelines[user] = []
+                if user_instance not in pipelines: pipelines[user_instance] = []
 
-            # If calling another service, store the call and the pipeline
-            to_service = obj["upstream_cluster"]
-            to_service = to_service.split('|')
-            if to_service[0] == 'outbound':
-                to_service = to_service[3].split('.')[0]
-                endpoint = obj['path']
-                if endpoint is None: endpoint = '/'
-                endpoint = endpoint.split('/')
-                endpoint = '/'.join(endpoint[0:5])
+                # If calling another service, store the call and the pipeline
+                to_service = obj["upstream_cluster"]
+                to_service = to_service.split('|')
+                if to_service[0] == 'outbound':
+                    to_service = to_service[3].split('.')[0]
+                    endpoint = obj['path']
+                    if endpoint is None: endpoint = '/'
+                    endpoint = endpoint.split('/')
+                    endpoint = '/'.join(endpoint[0:5])
 
-                call_counters[user][(from_service, to_service, endpoint)] += 1
-                call_counters[user_instance][(from_service, to_service, endpoint)] += 1
-                pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
-                pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
-    f.close()
+                    call_counters[user][(from_service, to_service, endpoint)] += 1
+                    call_counters[user_instance][(from_service, to_service, endpoint)] += 1
+                    pipelines[user].append((start_time.isoformat(), from_service, to_service, endpoint))
+                    pipelines[user_instance].append((start_time.isoformat(), from_service, to_service, endpoint))
+        f.close()
+
+    for l in pipelines.values():
+        l.sort(key=lambda x: x[0])
+
+    return pipelines, call_counters
+
 
 
 def write_pipelines(pipelines):

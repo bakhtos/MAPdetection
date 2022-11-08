@@ -8,19 +8,13 @@ from map_detection.utils import *
 
 __all__ = ['generate_call_graphs']
 
+
 def generate_call_graphs(pptam_dir, tracing_dir, time_delta):
     user_boundaries, instance_boundaries = detect_users(pptam_dir, time_delta)
 
     # Get calls and pipelines for each user using logs of each service
-    call_counters = dict()
-    pipelines = dict()
-    for file in os.listdir(tracing_dir):
-        if file.endswith(".log"):
-            parse_logs(tracing_dir, file, user_boundaries, instance_boundaries, call_counters, pipelines)
-
-    # Sort pipelines by time of call
-    for l in pipelines.values():
-        l.sort(key = lambda x: x[0])
+    pipelines, call_counters = parse_logs(tracing_dir, user_boundaries,
+                                          instance_boundaries)
 
     # Create networkx' multigraph, edges are identified by User
     user_graphs = dict()
