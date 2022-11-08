@@ -119,10 +119,38 @@ def detect_frontend_integration(G, frontend_services=None, user='NoUser'):
     return frontend_candidates, frontend_violators
 
 
-def detect_information_holder_resource(G, database_services=None, user=None):
+def detect_information_holder_resource(G, database_services=None,
+                                       user='NoUser'):
+    """Detect the Information Holder Resource pattern.
+
+    Information Holder Resource (IHR) and Database (DB) service pairs are such
+    that a DB service is only called from IHR and IHR only calls DB.
+
+    Parameters
+    __________
+    G : networkx.MultiDiGraph,
+        Graph to be studied (converted to simple DiGraph)
+    database_services : set[str], optional (default None)
+        If given, check that services in this set fulfill the property,
+        violating services will be returned in database_call_violators and
+        database_no_ihr_violators
+    user : str, optional (default 'NoUser')
+        User's name to put in logs
+
+    Returns
+    _______
+    ihr_candidates : set[tuple[str, str]],
+        Services that could be IHR for some DB (pairs (IHR, DB))
+    ihr_violators : set[tuple[str, str]],
+        Services that could be IHR for some DB, but they also call other services
+        (pairs (IHR, DB))
+    database_call_violators : set[str],
+        Services from database_services that call other services
+    databaser_no_ihr_violators : set[str],
+        Services from database_services that have no apparent IHR
+    """
 
     if database_services is None: database_services = set()
-    if user is None: user = "NoUser"
 
     D = nx.DiGraph(G)
 
