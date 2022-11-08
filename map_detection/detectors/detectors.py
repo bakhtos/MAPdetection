@@ -6,25 +6,35 @@ __all__ = ['detect_request_bundle', 'detect_frontend_integration',
 
 def detect_request_bundle(pipeline, threshold_service=2,
                           threshold_endpoint=2, user='NoUser'):
-    '''Detect request bundle anti-pattern, i.e. consecutive calls between same services.
+    """Detect request bundle anti-pattern, i.e. consecutive calls between same services.
 
     Bundles are detected on service level (service A repeatedly calls same service B)
     and endpoint level (service A repeatedly calls same endpoint of same service B).
     Results are returned as dicts from users to a list of detected bundles, each
     bundle is a tuple of the form (from_service, to_service, count) for service-level detection
     and (from_service, to_service, endpoint, count) for endpoint-level detection.
-    
-    :param dict pipelines: A dictionary of users and their service call pipelines
-    as returned by :py:func:parse_logs
-    :param int threshold_service: Minimum count of consecutive calls necessary 
-    to make up a bundle in service-level detection (default = 2, i.e. any repeated call makes a bundle)
-    :param int threshold_endpoint: Minimum count of consecutive calls necessary 
-    to make up a bundle in endpoint-level detection (default = 2, i.e. any repeated call makes a bundle)
-    
-    :return: bundles_service - detected bundles for each user in service-level detection,
-             bundles_endpoint - detected bundles for each user in endpoint-level detecton
-    :rtype: dict
-    '''
+
+    pipelines : list[tuple[datetime, str, str, str]],
+        A list containing a call pipeline for a user (one of the items in
+        pipelines returned by parse_logs())
+    threshold_service : int, optional (default 2)
+        Minimum count of consecutive calls necessary to make up a bundle in
+        service-level detection (default = 2, i.e. any repeated call
+                                 makes a bundle)
+    threshold_endpoint : int, optional (default 2)
+        Minimum count of consecutive calls necessary to make up a bundle in
+        endpoint-level detection (default = 2, i.e. any repeated call
+                                  makes a bundle)
+    user : str, optional (default 'NoUser')
+        User's name to put in logs
+
+    Returns
+    _______
+    bundles_service : list[tuple[str, str, int]],
+        Detected bundles in service-level detection
+    bundles_endpoint : list[tuple[str, str, str, int]],
+        Detected bundles in endpoint-level detection
+    """
 
     bundles_service = []
     bundles_endpoint = []
