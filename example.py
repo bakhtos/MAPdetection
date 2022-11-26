@@ -50,4 +50,3 @@ if __name__ == '__main__':
             detect_information_holder_resource(G, database_services=DATABASE_SERVICES,
                                                user=user)
     write_pipelines(pipelines)
-    #draw_graph(G, intervals)
