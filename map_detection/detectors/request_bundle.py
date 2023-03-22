@@ -1,5 +1,5 @@
-def detect_request_bundle(pipeline, threshold_service=2,
-                          threshold_endpoint=2, user='NoUser'):
+def request_bundle(pipeline, threshold_service=2,
+                   threshold_endpoint=2, user='NoUser'):
     """Detect request bundle anti-pattern, i.e. consecutive calls between same services.
 
     Bundles are detected on service level (service A repeatedly calls same service B)

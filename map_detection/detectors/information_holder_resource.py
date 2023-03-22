@@ -1,8 +1,8 @@
 import networkx as nx
 
 
-def detect_information_holder_resource(G, database_services=None,
-                                       user='NoUser'):
+def information_holder_resource(G, database_services=None,
+                                user='NoUser'):
     """Detect the Information Holder Resource pattern.
 
     Information Holder Resource (IHR) and Database (DB) service pairs are such

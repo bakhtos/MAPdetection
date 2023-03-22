@@ -1,7 +1,7 @@
 import networkx as nx
 
 
-def detect_frontend_integration(G, frontend_services=None, user='NoUser'):
+def frontend_integration(G, frontend_services=None, user='NoUser'):
     """Detect the Frontend Integration API pattern.
 
     Frontend services should only have outgoing calls. Two things can be done -
