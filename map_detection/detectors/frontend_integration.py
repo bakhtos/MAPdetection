@@ -1,5 +1,8 @@
 import networkx as nx
 
+import argparse
+from datetime import datetime
+
 
 def frontend_integration(G, frontend_services=None, user='NoUser'):
     """Detect the Frontend Integration API pattern.
@@ -48,3 +51,21 @@ def frontend_integration(G, frontend_services=None, user='NoUser'):
                   f"({in_degree=})")
 
     return frontend_candidates, frontend_violators
+
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--edgelist', '-e', required=True, help="Path to the "
+                                                                "graph "
+                                                                "edgelist")
+    parser.add_argument('--user', '-u', required=False, default='NoUser',
+                        help="Name of the User for the logs")
+    parser.add_argument('--frontends', '-f', nargs='+', help='List of the '
+                                                             'frontend '
+                                                             'microservices')
+    args = parser.parse_args()
+    G = nx.read_edgelist(args.edgelist, create_using=nx.MultiDiGraph, data=[(
+        'key', str), ('time', datetime.fromisoformat)])
+    frontend_integration(G, frontend_services=set(args.frontends),
+                         user=args.user)

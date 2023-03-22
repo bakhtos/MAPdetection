@@ -1,5 +1,8 @@
 import networkx as nx
 
+import argparse
+from datetime import datetime
+
 
 def information_holder_resource(G, database_services=None,
                                 user='NoUser'):
@@ -68,3 +71,21 @@ def information_holder_resource(G, database_services=None,
               f"is designated as database service but no IHR detected.")
 
     return ihr_candidates, ihr_violators, database_call_violators, database_no_ihr_violators
+
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--edgelist', '-e', required=True, help="Path to the "
+                                                                "graph "
+                                                                "edgelist")
+    parser.add_argument('--user', '-u', required=False, default='NoUser',
+                        help="Name of the User for the logs")
+    parser.add_argument('--databases', '-d', nargs='+', help='List of the '
+                                                             'database '
+                                                             'microservices')
+    args = parser.parse_args()
+    G = nx.read_edgelist(args.edgelist, create_using=nx.MultiDiGraph, data=[(
+        'key', str), ('time', datetime.fromisoformat)])
+    information_holder_resource(G, database_services=set(args.databases),
+                                user=args.user)

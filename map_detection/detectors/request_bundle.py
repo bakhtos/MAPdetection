@@ -1,3 +1,5 @@
+import argparse
+
 def request_bundle(edgelist, threshold_service=2,
                    threshold_endpoint=2, user='NoUser'):
     """Detect request bundle anti-pattern, i.e. consecutive calls between same services.
@@ -64,3 +66,28 @@ def request_bundle(edgelist, threshold_service=2,
             last_call_endpoint = current_call_endpoint
 
     return bundles_service, bundles_endpoint
+
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--edgelist', '-e', required=True, help="Path to the "
+                                                                "graph "
+                                                                "edgelist")
+    parser.add_argument('--user', '-u', required=False, default='NoUser',
+                        help="Name of the User for the logs")
+    parser.add_argument('--endpoint_threshold', '-e', type=int,
+                        required=False, default=2, help="Minimum count of "
+                                                        "consecutive calls "
+                                                        "necessary to make a "
+                                                        "bundle on endpoint "
+                                                        "level detection")
+    parser.add_argument('--service_threshold', '-s', type=int,
+                        required=False, default=2, help="Minimum count of "
+                                                        "consecutive calls "
+                                                        "necessary to make a "
+                                                        "bundle on service "
+                                                        "level detection")
+    args = parser.parse_args()
+    request_bundle(args.edgelist, args.service_threshold,
+                   args.endpoint_threshold, args.user)
