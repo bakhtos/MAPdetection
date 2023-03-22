@@ -1,4 +1,4 @@
-def request_bundle(pipeline, threshold_service=2,
+def request_bundle(edgelist, threshold_service=2,
                    threshold_endpoint=2, user='NoUser'):
     """Detect request bundle anti-pattern, i.e. consecutive calls between same services.
 
@@ -8,9 +8,8 @@ def request_bundle(pipeline, threshold_service=2,
     bundle is a tuple of the form (from_service, to_service, count) for service-level detection
     and (from_service, to_service, endpoint, count) for endpoint-level detection.
 
-    pipelines : list[tuple[datetime, str, str, str]],
-        A list containing a call pipeline for a user (one of the items in
-        pipelines returned by parse_logs())
+    edgelist : str,
+        Filename of the edgelist of the call graph with edges sorted by time
     threshold_service : int, optional (default 2)
         Minimum count of consecutive calls necessary to make up a bundle in
         service-level detection (default = 2, i.e. any repeated call
@@ -30,13 +29,16 @@ def request_bundle(pipeline, threshold_service=2,
         Detected bundles in endpoint-level detection
     """
 
+    with open(edgelist, 'r') as f:
+        edges = f.readlines()
     bundles_service = []
     bundles_endpoint = []
     last_call_service = None
     last_call_endpoint = None
     count_service = 1
     count_endpoint = 1
-    for (time, from_service, to_service, endpoint) in pipeline:
+    for edge in edges:
+        from_service, to_service, endpoint, time = edge.split(' ')
         current_call_service = from_service, to_service
         current_call_endpoint = from_service, to_service, endpoint
         if current_call_service == last_call_service:
