@@ -22,13 +22,13 @@ def fields():
 
 @app.route("/api/graph/data")
 def data():
-    type = request.args.get("type", None)
+    detector = request.args.get("detector", None)
     edgelist = request.args.get("edgelist", None)
     if edgelist is None:
         return "No graph edgelist given"
     nodes = []
     edges = []
-    if type == "frontend":
+    if detector == "frontend":
         p = os.path.join("edgelists", edgelist)
         G = map_detection.read_edgelist(p)
         c, v = map_detection.detectors.frontend_integration(G, 'ts-ui-dashboard',
