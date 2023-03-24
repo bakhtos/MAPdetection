@@ -53,8 +53,9 @@ def data():
                           "arc__frontend_violator": av,
                           "arc__frontend_healthy": ah})
         id_ = 0
-        for edge in G.edges:
-            edges.append({"id": id_, "source": edge[0], "target": edge[1]})
+        for edge in G.edges(data=True):
+            edges.append({"id": id_, "source": edge[0], "target": edge[1],
+                          "mainstat": edge[2]["weight"]})
             id_ += 1
     elif detector == "ihr":
         databases = request.args.get('databases', None)
@@ -92,8 +93,9 @@ def data():
                           "arc__db_no_ihr": a_db_no_ihr,
                           "arc__db_healthy": a_db_h})
         id_ = 0
-        for edge in G.edges:
-            edges.append({"id": id_, "source": edge[0], "target": edge[1]})
+        for edge in G.edges(data=True):
+            edges.append({"id": id_, "source": edge[0], "target": edge[1],
+                          "mainstat": edge[2]["weight"]})
             id_ += 1
     elif detector == "request_bundle":
         endpoint_threshold = request.args.get("endpoint_threshold", 2)
@@ -117,8 +119,9 @@ def data():
                 nodes.append({"id": node, "title": node, "arc__rb_v": 0.0,
                               "arc__rc_n": 1.0})
         id_ = 0
-        for edge in G.edges:
-            edges.append({"id": id_, "source": edge[0], "target": edge[1]})
+        for edge in G.edges(data=True):
+            edges.append({"id": id_, "source": edge[0], "target": edge[1],
+                          "maintstat": edge[2]["weight"]})
             id_ += 1
 
     else:
