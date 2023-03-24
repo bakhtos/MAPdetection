@@ -29,17 +29,23 @@ def data():
     nodes = []
     edges = []
     if detector == "frontend":
+        frontends = request.args.get("frontends", None)
+        if frontends is not None:
+            frontends = set(frontends.split(","))
+        else:
+            frontends = set()
         p = os.path.join("edgelists", edgelist)
         G = map_detection.read_edgelist(p)
-        c, v = map_detection.detectors.frontend_integration(G, 'ts-ui-dashboard',
-                                                            'UserNoLogin')
-        print(request.args.get("type"))
-        ah = an = ac = av = 0.0
-        for node in G:
+        c, v = map_detection.detectors.frontend_integration(G, frontends)
+        c -= frontends
+        for node in G.nodes:
+            ac = an = av = ah = 0.0
             if node in c:
                 ac = 1.0
             elif node in v:
                 av = 1.0
+            elif node in frontends:
+                ah = 1.0
             else:
                 an = 1.0
             nodes.append({"id":node, "title": node, "arc__normal": an,
