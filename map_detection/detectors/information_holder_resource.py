@@ -2,7 +2,8 @@ import networkx as nx
 
 import argparse
 
-from map_detection.map_detection import read_edgelist
+from map_detection.read_edgelist import read_edgelist
+
 
 def information_holder_resource(G, database_services=None,
                                 user='NoUser'):
