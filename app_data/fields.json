@@ -1,0 +1,15 @@
+{"edges_fields": [
+    {"field_name": "id", "type": "string"},
+    {"field_name": "source", "type": "string"},
+    {"field_name": "target", "type": "string"}
+  ],
+"nodes_fields": [
+  {"field_name": "id", "type": "string"},
+  {"field_name": "title", "type": "string"},
+  {"field_name": "arc__normal", "type": "number", "color": "gray",
+    "display_name": "Microservice"},
+  {"field_name": "arc__frontend_candidate", "type": "number", "color": "orange",
+    "displayName": "Frontend candidate"},
+  {"field_name": "arc__frontend_violator", "type": "number", "color": "red",
+    "displayName": "Frontend violator"}
+]}

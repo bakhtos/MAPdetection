@@ -1,4 +1,5 @@
 import os
+import json
 
 from flask import Flask, jsonify
 from flask import request
@@ -14,26 +15,9 @@ def health():
 
 @app.route("/api/graph/fields")
 def fields():
-    nodes_fields = [{"field_name": "id", "type": "string"},
-                    {"field_name": "title", "type": "string",
-                     },
-                    {"field_name": "arc__normal", "type": "number", "color":
-                        "gray", "display_name": "Microservice"},
-                    {"field_name": "arc__frontend_candidate",
-                     "type": "number", "color": "orange", "displayName":
-                         "Frontend candidate"},
-                    {"field_name": "arc__frontend_violator",
-                     "type": "number", "color": "red", "displayName":
-                         "Frontend violator"}]
-    edges_fields = [
-        {"field_name": "id", "type": "string"},
-        {"field_name": "source", "type": "string"},
-        {"field_name": "target", "type": "string"},
-        {"field_name": "mainStat", "type": "number"},
-    ]
-    result = {"nodes_fields": nodes_fields,
-              "edges_fields": edges_fields}
-    return jsonify(result)
+    with open(os.path.join("app_data", "fields.json"), 'r') as f:
+        obj = json.load(f)
+    return jsonify(obj)
 
 
 @app.route("/api/graph/data")
