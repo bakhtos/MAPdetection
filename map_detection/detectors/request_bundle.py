@@ -76,13 +76,13 @@ if __name__ == '__main__':
                                                                 "edgelist")
     parser.add_argument('--user', '-u', required=False, default='NoUser',
                         help="Name of the User for the logs")
-    parser.add_argument('--endpoint_threshold', '-e', type=int,
+    parser.add_argument('--endpoint_threshold', '-et', type=int,
                         required=False, default=2, help="Minimum count of "
                                                         "consecutive calls "
                                                         "necessary to make a "
                                                         "bundle on endpoint "
                                                         "level detection")
-    parser.add_argument('--service_threshold', '-s', type=int,
+    parser.add_argument('--service_threshold', '-st', type=int,
                         required=False, default=2, help="Minimum count of "
                                                         "consecutive calls "
                                                         "necessary to make a "
