@@ -1,5 +1,6 @@
 import argparse
 
+
 def request_bundle(edgelist, threshold_service=2,
                    threshold_endpoint=2, user='NoUser'):
     """Detect request bundle anti-pattern, i.e. consecutive calls between same services.

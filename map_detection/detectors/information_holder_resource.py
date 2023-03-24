@@ -1,8 +1,8 @@
 import networkx as nx
 
 import argparse
-from datetime import datetime
 
+from map_detection.map_detection import read_edgelist
 
 def information_holder_resource(G, database_services=None,
                                 user='NoUser'):
@@ -85,7 +85,7 @@ if __name__ == '__main__':
                                                              'database '
                                                              'microservices')
     args = parser.parse_args()
-    G = nx.read_edgelist(args.edgelist, create_using=nx.MultiDiGraph, data=[(
-        'key', str), ('time', datetime.fromisoformat)])
-    information_holder_resource(G, database_services=set(args.databases),
-                                user=args.user)
+
+    G = read_edgelist(args.edgelist)
+    databases = None if args.databases is None else set(args.databases)
+    information_holder_resource(G, database_services=databases, user=args.user)

@@ -1,9 +1,27 @@
 import networkx as nx
 
 import argparse
-from datetime import datetime
 
 from map_detection.detectors import *
+
+__all__ = ['read_edgelist']
+
+
+def read_edgelist(path):
+    G = nx.MultiDiGraph()
+    with open(path, 'r') as f:
+        edges = f.readlines()
+    for edge in edges:
+        parts = edge.split(' ')
+        from_ = parts[0]
+        to_ = parts[1]
+        key_ = parts[2]
+        if (from_, to_, key_) in G.edges:
+            G.edges[from_, to_, key_]["weight"] += 1
+        else:
+            G.add_edge(from_, to_, key_, weight=1)
+
+    return G
 
 
 if __name__ == '__main__':
@@ -32,11 +50,10 @@ if __name__ == '__main__':
                                                         "bundle on service "
                                                         "level detection")
     args = parser.parse_args()
-    G = nx.read_edgelist(args.edgelist, create_using=nx.MultiDiGraph, data=[(
-        'key', str), ('time', datetime.fromisoformat)])
-    frontend_integration(G, frontend_services=set(args.frontends),
-                         user=args.user)
-    information_holder_resource(G, database_services=set(args.databases),
-                                user=args.user)
+    G = read_edgelist(args.edgelist)
+    databases = None if args.databases is None else set(args.databases)
+    frontends = None if args.frontends is None else set(args.frontends)
+    frontend_integration(G, frontend_services=frontends, user=args.user)
+    information_holder_resource(G, database_services=databases, user=args.user)
     request_bundle(args.edgelist, args.service_threshold,
                    args.endpoint_threshold, args.user)

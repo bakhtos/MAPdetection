@@ -1,7 +1,8 @@
 import networkx as nx
 
 import argparse
-from datetime import datetime
+
+from map_detection.map_detection import read_edgelist
 
 
 def frontend_integration(G, frontend_services=None, user='NoUser'):
@@ -65,7 +66,7 @@ if __name__ == '__main__':
                                                              'frontend '
                                                              'microservices')
     args = parser.parse_args()
-    G = nx.read_edgelist(args.edgelist, create_using=nx.MultiDiGraph, data=[(
-        'key', str), ('time', datetime.fromisoformat)])
-    frontend_integration(G, frontend_services=set(args.frontends),
-                         user=args.user)
+
+    G = read_edgelist(args.edgelist)
+    frontends = None if args.frontends is None else set(args.frontends)
+    frontend_integration(G, frontend_services=frontends, user=args.user)
