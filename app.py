@@ -34,23 +34,18 @@ def data():
         c, v = map_detection.detectors.frontend_integration(G, 'ts-ui-dashboard',
                                                             'UserNoLogin')
         print(request.args.get("type"))
-        nodes = []
+        ah = an = ac = av = 0.0
         for node in G:
             if node in c:
-                an = 0.0
                 ac = 1.0
-                av = 0.0
             elif node in v:
-                an = 0.0
-                ac = 0.0
                 av = 1.0
             else:
                 an = 1.0
-                ac = 0.0
-                av = 0.0
             nodes.append({"id":node, "title": node, "arc__normal": an,
-                          "arc__candidate": ac, "arc__violator": av})
-        edges = []
+                          "arc__frontend_candidate": ac,
+                          "arc__frontend_violator": av,
+                          "arc__frontend_healthy": ah})
         id_ = 0
         for edge in G.edges:
             edges.append({"id": id_, "source": edge[0], "target": edge[1]})
