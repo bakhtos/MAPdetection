@@ -55,6 +55,7 @@ def data():
         for edge in G.edges:
             edges.append({"id": id_, "source": edge[0], "target": edge[1]})
             id_ += 1
-
+    else:
+        return f"Unknown detector '{detector}'"
     return jsonify({"nodes": nodes, "edges": edges})
 
