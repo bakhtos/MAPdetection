@@ -8,7 +8,7 @@ import map_detection
 app = Flask(__name__)
 
 
-@app.route("/api/graph/health")
+@app.route("/api/health")
 def health():
     return "Working fine"
 
