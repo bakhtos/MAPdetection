@@ -55,7 +55,7 @@ def data():
         id_ = 0
         for edge in G.edges(data=True):
             edges.append({"id": id_, "source": edge[0], "target": edge[1],
-                          "mainstat": edge[2]["weight"]})
+                          "mainStat": edge[2]["weight"]})
             id_ += 1
     elif detector == "ihr":
         databases = request.args.get('databases', None)
@@ -95,7 +95,7 @@ def data():
         id_ = 0
         for edge in G.edges(data=True):
             edges.append({"id": id_, "source": edge[0], "target": edge[1],
-                          "mainstat": edge[2]["weight"]})
+                          "mainStat": edge[2]["weight"]})
             id_ += 1
     elif detector == "request_bundle":
         endpoint_threshold = request.args.get("endpoint_threshold", 2)
@@ -121,7 +121,7 @@ def data():
         id_ = 0
         for edge in G.edges(data=True):
             edges.append({"id": id_, "source": edge[0], "target": edge[1],
-                          "maintstat": edge[2]["weight"]})
+                          "mainStat": edge[2]["weight"]})
             id_ += 1
 
     else:
