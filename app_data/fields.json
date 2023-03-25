@@ -29,6 +29,6 @@
     "displayName": "DB with no IHR"},
   {"field_name": "arc__rb_v", "type": "number", "color": "red",
     "displayName": "Part of a violated Request Bundle"},
-  {"field_name": "arc__rb_n", "type": "number", "color": "gray",
+  {"field_name": "arc__rb_n", "type": "number", "color": "green",
     "displayName": "Does not violate Request Bundle"}
 ]}
