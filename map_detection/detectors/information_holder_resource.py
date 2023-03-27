@@ -55,12 +55,12 @@ def information_holder_resource(G, database_services=None,
                     ihr_candidates.add((pred, node))
                     print(f"{user}: Information Holder Resource - '{pred}' is a"
                           f" potential IHR for '{node}'")
+                    database_no_ihr_violators.discard(node)
                 else:
                     ihr_violators.add((pred, node))
                     print(f"{user}: Information Holder Resouce Violation - "
                           f"'{node}' is only accessed through '{pred}', but "
                           f"'{pred}' calls other services as well.")
-                database_no_ihr_violators.discard(node)
         if not zero_degree and is_database:
             database_call_violators.add(node)
             print(f"{user}: Information Holder Resource Violation - '{node}'"
