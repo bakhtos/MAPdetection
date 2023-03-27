@@ -1,0 +1,18 @@
+{"edges_fields": [
+  {"field_name": "id", "type": "string"},
+  {"field_name": "source", "type": "string"},
+  {"field_name": "target", "type": "string"},
+  {"field_name": "mainStat", "type": "number"}
+],
+"nodes_fields": [
+  {"field_name": "id", "type": "string"},
+  {"field_name": "title", "type": "string"},
+  {"field_name": "arc__frontend_normal", "type": "number", "color": "gray",
+    "displayName": "Non-frontend service"},
+  {"field_name": "arc__frontend_healthy", "type":  "number", "color": "green",
+  "displayName":  "Healthy Frontend service"},
+  {"field_name": "arc__frontend_candidate", "type": "number", "color": "orange",
+    "displayName": "Frontend candidate"},
+  {"field_name": "arc__frontend_violator", "type": "number", "color": "red",
+    "displayName": "Frontend violator"}
+]}
