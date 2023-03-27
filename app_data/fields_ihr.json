@@ -1,0 +1,22 @@
+{"edges_fields": [
+  {"field_name": "id", "type": "string"},
+  {"field_name": "source", "type": "string"},
+  {"field_name": "target", "type": "string"},
+  {"field_name": "mainStat", "type": "number"}
+],
+"nodes_fields": [
+  {"field_name": "id", "type": "string"},
+  {"field_name": "title", "type": "string"},
+  {"field_name": "arc__db_normal", "type": "number", "color": "gray",
+    "displayName": "Non-DB/IHR service"},
+  {"field_name": "arc__db_healthy", "type":  "number", "color": "green",
+    "displayName":  "Healthy DB service"},
+  {"field_name": "arc__ihr_candidate", "type": "number", "color": "green",
+    "displayName": "IHR candidate"},
+  {"field_name": "arc__ihr_violator", "type": "number", "color": "orange",
+    "displayName": "IHR violator"},
+  {"field_name": "arc__db_violator", "type": "number", "color": "black",
+    "displayName": "DB violator"},
+  {"field_name": "arc__db_no_ihr", "type": "number", "color": "red",
+    "displayName": "DB with no IHR"}
+]}
