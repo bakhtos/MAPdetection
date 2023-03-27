@@ -4,6 +4,9 @@ import json
 from flask import Flask, jsonify
 from flask import request
 
+with open(os.path.join("app_data", "fields.json"), 'r') as f:
+    FIELDS = json.load(f)
+
 import map_detection
 app = Flask(__name__)
 
@@ -15,9 +18,7 @@ def health():
 
 @app.route("/api/graph/fields")
 def fields():
-    with open(os.path.join("app_data", "fields.json"), 'r') as f:
-        obj = json.load(f)
-    return jsonify(obj)
+    return jsonify(FIELDS)
 
 
 @app.route("/api/graph/data")
